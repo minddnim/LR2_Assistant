@@ -1,84 +1,119 @@
 import Data.Attoparsec.ByteString.Char8 as AP
 import Data.ByteString.Char8 as B
+import Control.Applicative
 
 data MusicData = MusicData {
-  dID :: ByteString,
-  dLevel :: ByteString,
-  dMusicTitle :: ByteString,
-  dBmsID :: ByteString,
-  dOrgArtist :: ByteString,
---  orgArtistURL :: ByteString,
-  dScoreSite :: ByteString,
---  scoreSiteURL :: ByteString,
-  dComment :: ByteString
+  dID :: Integer,
+  dLevel :: String,
+  dMusicTitle :: String,
+  dBmsID :: Integer,
+  dOrgArtist :: String,
+  dOrgArtistURL :: String,
+  dScoreSite :: String,
+  dScoreSiteURL :: String,
+  dComment :: String
 } deriving (Show)
 
 pMusicData :: Parser MusicData
 pMusicData = do
   char '['
-  iD <- pID
+  iD <- B.unpack <$> pID
   char ','
-  level <- pLevel
+  level <- B.unpack <$> pLevel
   char ','
-  musicTitle <- pMusicTitle
+  musicTitle <- B.unpack <$> pMusicTitle
   char ','
-  bmsID <- pBmsID
+  bmsID <- B.unpack <$> pBmsID
   char ','
-  orgArtist <- pOrgArtist
+  (artUrl, artName) <- pOrgArtistInfo
   char ','
-  scoreSite <- pScoreSite
+  (siteURL, siteName) <- pScoreSiteInfo
   char ','
-  comment <- pComment
+  comment <- B.unpack <$> pComment
   char ','
   char ']'
-  return $ MusicData iD level musicTitle bmsID orgArtist scoreSite comment
---  return $ MusicData iD level musicTitle orgArtist orgArtistURL scoreSite scoreSiteURL comment
+  return $ MusicData (read iD) level musicTitle (read bmsID) artName artUrl siteName siteURL comment
 
 pID :: Parser ByteString
-pID = AP.takeWhile $ notInClass ","
+pID = AP.takeTill $ inClass ","
 
 pLevel :: Parser ByteString
-pLevel = do
-  char '"'
-  level <- AP.takeWhile $ notInClass "\""
-  char '"'
+pLevel = do 
+  level <- pLevelHtmlTag <|> pLevelHtmlNoTag
   return level
 
 pMusicTitle :: Parser ByteString
 pMusicTitle = do
-  char '"'
-  musicTitle <- AP.takeWhile $ notInClass "\""
-  char '"'
+  musicTitle <- pGetInfo
   return musicTitle
 
 pBmsID :: Parser ByteString
 pBmsID = do
-  char '"'
-  bmsID <- AP.takeWhile $ notInClass "\""
-  char '"'
+  bmsID <- pGetInfo
   return bmsID
 
-pOrgArtist :: Parser ByteString
-pOrgArtist = do
-  char '"'
-  orgArtist <- AP.takeWhile $ notInClass "\""
-  char '"'
+pOrgArtistInfo :: Parser (String, String)
+pOrgArtistInfo = do
+  orgArtist <- pURLAndName <|> pNoURLAndName
   return orgArtist
 
-pScoreSite :: Parser ByteString
-pScoreSite = do
-  char '"'
-  scoreSite <- AP.takeWhile $ notInClass "\""
-  char '"'
+pScoreSiteInfo :: Parser (String, String)
+pScoreSiteInfo = do
+  scoreSite <- pURLAndName <|> pNoURLAndName
   return scoreSite
 
 pComment :: Parser ByteString
 pComment = do
-  char '"'
-  comment <- AP.takeWhile $ notInClass "\""
-  char '"'
+  comment <- pGetInfo
   return comment
 
+pLevelHtmlTag :: Parser ByteString
+pLevelHtmlTag = do
+  char '"'
+  pHtmlTag
+  level <- AP.takeTill $ inClass "<"
+  pHtmlTag
+  char '"'
+  return level
+
+pLevelHtmlNoTag :: Parser ByteString
+pLevelHtmlNoTag = do
+  level <- pGetInfo
+  return level
+
+pURLAndName :: Parser (String, String)
+pURLAndName = do
+  char '"'
+  char '<'
+  AP.takeTill $ inClass "'"
+  char '\''
+  url <- AP.takeTill $ inClass "'"
+  char '\''
+  char '>'
+  name <- AP.takeTill $ inClass "<"
+  pHtmlTag
+  char '"'
+  return (B.unpack url, B.unpack name)
+
+pNoURLAndName :: Parser (String, String)
+pNoURLAndName = do
+  name <- pGetInfo
+  return ("", B.unpack name)
+
+pHtmlTag :: Parser ByteString
+pHtmlTag = do
+  char '<'
+  content <- AP.takeTill $ inClass ">"
+  char '>'
+  return content
+
+pGetInfo :: Parser ByteString
+pGetInfo = do
+  char '"'
+  info <- AP.takeTill $ inClass "\""
+  char '"'
+  return info
 
 main :: IO ()
-main = print $ parseOnly pMusicData (B.pack "[61,\"<font color='red'>◎1</font>\",\"reikon girl@Genso-kyo (NORMAL7)\",\"120135\",\"\",\"<a href='http://cid-578814acc2bd5a74.skydrive.live.com/browse.aspx/.Public/BMS'>sun3</a>\",\"\",],")
+main = print $ parseOnly pMusicData (B.pack "[54,\"◎3\",\"祭月 (皿祭)\",\"132517\",\"<a href='http://flowermaster.web.fc2.com/'>わや</a>\",\"<a href='http://yaruki0.sakura.ne.jp/bms/ondanyugi4.html'>sa10</a>\",\"第六回差分企画 5KEYS\",]")
+
