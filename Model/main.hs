@@ -1,27 +1,14 @@
 import Network.HTTP
 import Data.List
 
-{-}
-data MusicData = MusicData {
-  iD :: Int,
-  level :: String,
-  musicTitle :: String,
-  orgArtist :: String,
-  orgArtistURL :: String,
-  scoreSite :: String,
-  scoreSiteURL :: String,
-  comment :: String
-} deriving (Show)
--}
-
 main :: IO()
 main = do
   htmlSrc <- openURL "http://flowermaster.web.fc2.com/lrnanido_sara.html"
   let musicDatas = defMusicSrc $ lines htmlSrc
   writeFile "musicData.txt" musicDatas
---  print musicDatas
---  aaa <- getLine
---  print aaa
+  print musicDatas
+  aaa <- getLine
+  print aaa
 
 openURL :: String -> IO String
 openURL x = getResponseBody =<< simpleHTTP (getRequest　x)
@@ -44,3 +31,5 @@ remBeginningSpace = map (dropWhile (== ' '))
 
 remOnlyNewLine :: String -> String
 remOnlyNewLine = filter (/= '\n') . filter (/= '\r')
+
+
