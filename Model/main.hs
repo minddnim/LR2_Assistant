@@ -1,11 +1,16 @@
 import Network.HTTP
+import Codec.Binary.UTF8.String
+
 import Data.List
+import MusicDataParser
 
 main :: IO()
 main = do
-  htmlSrc <- openURL "http://flowermaster.web.fc2.com/lrnanido_sara.html"
-  let musicDatas = defMusicSrc $ lines htmlSrc
-  writeFile "musicData.txt" musicDatas
+--  htmlSrc <- openURL "http://flowermaster.web.fc2.com/lrnanido_sara.html"
+  htmlSrc <- openURL "http://ameria3141.web.fc2.com/hakkyou_nanidohyou_no.2/hakkyou_nanidohyou_no.2.html"
+  let defMusicDatasSrc = defMusicSrc $ lines $ decodeString htmlSrc
+      musicDatas = getMusicDatas defMusicDatasSrc
+  writeFile "musicData.txt" $ encodeString $ show musicDatas
   print musicDatas
   aaa <- getLine
   print aaa

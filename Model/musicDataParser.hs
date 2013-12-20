@@ -1,3 +1,9 @@
+module MusicDataParser
+(
+  MusicData(..),
+  getMusicDatas
+) where
+
 import Data.Attoparsec.ByteString.Char8 as AP
 import Data.ByteString.Char8 as B
 import Control.Applicative
@@ -13,6 +19,26 @@ data MusicData = MusicData {
   dScoreSiteURL :: String,
   dComment :: String
 } deriving (Show)
+
+getMusicDatas :: String -> [MusicData]
+getMusicDatas str =
+  case parseOnly pMusicDatas byteStr of
+    Left _ -> error "parse error."
+    Right results -> results
+  where byteStr = B.pack str
+
+pMusicDatas :: Parser [MusicData]
+pMusicDatas = do
+  string $ B.pack "var"
+  many space
+  string $ B.pack "mname"
+  many space
+  char '='
+  many space
+  char '['
+  many pMusicData
+--  musicDatas <- many pMusicData
+--  return musicDatas
 
 pMusicData :: Parser MusicData
 pMusicData = do
@@ -32,40 +58,30 @@ pMusicData = do
   comment <- B.unpack <$> pComment
   char ','
   char ']'
+  char ','
+  many space
   return $ MusicData (read iD) level musicTitle (read bmsID) artName artUrl siteName siteURL comment
 
 pID :: Parser ByteString
 pID = AP.takeTill $ inClass ","
 
 pLevel :: Parser ByteString
-pLevel = do 
-  level <- pLevelHtmlTag <|> pLevelHtmlNoTag
-  return level
+pLevel = pLevelHtmlTag <|> pLevelHtmlNoTag
 
 pMusicTitle :: Parser ByteString
-pMusicTitle = do
-  musicTitle <- pGetInfo
-  return musicTitle
+pMusicTitle = pGetInfo
 
 pBmsID :: Parser ByteString
-pBmsID = do
-  bmsID <- pGetInfo
-  return bmsID
+pBmsID = pGetInfo
 
 pOrgArtistInfo :: Parser (String, String)
-pOrgArtistInfo = do
-  orgArtist <- pURLAndName <|> pNoURLAndName
-  return orgArtist
+pOrgArtistInfo = pURLAndName <|> pNoURLAndName
 
 pScoreSiteInfo :: Parser (String, String)
-pScoreSiteInfo = do
-  scoreSite <- pURLAndName <|> pNoURLAndName
-  return scoreSite
+pScoreSiteInfo = pURLAndName <|> pNoURLAndName
 
 pComment :: Parser ByteString
-pComment = do
-  comment <- pGetInfo
-  return comment
+pComment = pGetInfo
 
 pLevelHtmlTag :: Parser ByteString
 pLevelHtmlTag = do
@@ -77,9 +93,7 @@ pLevelHtmlTag = do
   return level
 
 pLevelHtmlNoTag :: Parser ByteString
-pLevelHtmlNoTag = do
-  level <- pGetInfo
-  return level
+pLevelHtmlNoTag = pGetInfo
 
 pURLAndName :: Parser (String, String)
 pURLAndName = do
@@ -113,7 +127,3 @@ pGetInfo = do
   info <- AP.takeTill $ inClass "\""
   char '"'
   return info
-
-main :: IO ()
-main = print $ parseOnly pMusicData (B.pack "[54,\"◎3\",\"祭月 (皿祭)\",\"132517\",\"<a href='http://flowermaster.web.fc2.com/'>わや</a>\",\"<a href='http://yaruki0.sakura.ne.jp/bms/ondanyugi4.html'>sa10</a>\",\"第六回差分企画 5KEYS\",]")
-

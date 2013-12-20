@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"pMusi",
+				"pMusicDatas	Parser [MusicData]"
+			],
+			[
+				"pLe",
+				"pLevelHtmlTag"
+			],
+			[
+				"p",
+				"pLevel"
+			],
+			[
+				"do",
+				"do"
+			],
+			[
+				"or",
+				"orgArtistURL"
+			],
+			[
+				"takew",
+				"takeWhile	(Char -> Bool) -> Parser ByteString"
+			],
+			[
+				"cha",
+				"Char8"
+			],
+			[
 				"M",
 				"MusicData	"
 			],
@@ -28,10 +56,18 @@
 	"buffers":
 	[
 		{
-			"file": "main.hs",
+			"file": "Main.hs",
 			"settings":
 			{
-				"buffer_size": 1777,
+				"buffer_size": 1474,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "MusicDataParser.hs",
+			"settings":
+			{
+				"buffer_size": 2677,
 				"line_ending": "Windows"
 			}
 		},
@@ -96,6 +132,9 @@
 	},
 	"file_history":
 	[
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/main.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/musicDataParser.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/testParse.hs",
 		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeHaskell/ModuleInspector.hs",
 		"/C/haskell/test.hs",
 		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
@@ -143,19 +182,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "main.hs",
+					"file": "Main.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1777,
+						"buffer_size": 1474,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								98
+								526,
+								526
 							]
 						],
 						"settings":
@@ -178,6 +217,35 @@
 			[
 				{
 					"buffer": 1,
+					"file": "MusicDataParser.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								57
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"semi_transient": false,
 					"settings":
 					{
@@ -259,7 +327,7 @@
 		"cols":
 		[
 			0.0,
-			0.56875,
+			0.473269774011,
 			1.0
 		],
 		"rows":
@@ -271,7 +339,7 @@
 	"menu_visible": true,
 	"output.haskell_error_checker":
 	{
-		"height": 191.0
+		"height": 504.0
 	},
 	"output.haskell_sublime_load":
 	{
@@ -311,7 +379,7 @@
 	{
 	},
 	"show_minimap": false,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 150.0,
