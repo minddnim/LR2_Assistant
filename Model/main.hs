@@ -1,40 +1,37 @@
-import Network.HTTP
-import Codec.Binary.UTF8.String
+-- OverloadedStrings 言語拡張を使うとダブルクオートで囲んだ文字列を、
+-- Text、ByteString リテラルとして扱ってくれるようになります。 
+{-# LANGUAGE OverloadedStrings #-} 
 
-import Data.List
+import qualified Data.Text as T
+import qualified Data.Text.IO as T
+import Network.HTTP
+
 import MusicDataParser
+
+openURL :: String -> IO String
+openURL x = getResponseBody =<< simpleHTTP (getRequest　x)
 
 main :: IO()
 main = do
 --  htmlSrc <- openURL "http://flowermaster.web.fc2.com/lrnanido_sara.html"
   htmlSrc <- openURL "http://ameria3141.web.fc2.com/hakkyou_nanidohyou_no.2/hakkyou_nanidohyou_no.2.html"
-  let defMusicDatasSrc = defMusicSrc $ lines $ decodeString htmlSrc
-      musicDatas = getMusicDatas defMusicDatasSrc
-  writeFile "musicData.txt" $ encodeString $ show musicDatas
-  print musicDatas
-  aaa <- getLine
-  print aaa
+  let musicDatas = getMusicDatas $ T.pack htmlSrc
+  T.writeFile "musicData.txt" $ foldl T.append "" $ getMusicDatasText musicDatas
 
-openURL :: String -> IO String
-openURL x = getResponseBody =<< simpleHTTP (getRequest　x)
+getMusicDatasText :: [MusicData] -> [T.Text]
+getMusicDatasText dats = getMusicDatasText' dats []
+  where getMusicDatasText' [] ret = reverse ret
+        getMusicDatasText' (x:xs) ret = getMusicDatasText' xs (getMusicDataText x : ret)
 
-defMusicSrc :: [String] -> String
-defMusicSrc = remOnlyNewLine . unlines . remBeginningSpace . searchMusicDefEnd . searchMusicDefStart
-
-searchMusicDefStart :: [String] -> [String]
-searchMusicDefStart (x:xs) | "var mname" `isInfixOf` x = x:xs
-                           | otherwise = searchMusicDefStart xs
-
-searchMusicDefEnd :: [String] -> [String]
-searchMusicDefEnd src = searchMusicDefEnd' src [""]
-  where searchMusicDefEnd' [] _ = error "Don't search Music Def End"
-        searchMusicDefEnd' (x:xs) ret | "];" `isInfixOf` x = reverse ret
-                                      | otherwise = searchMusicDefEnd' xs (x:ret)
-
-remBeginningSpace :: [String] -> [String]
-remBeginningSpace = map (dropWhile (== ' '))
-
-remOnlyNewLine :: String -> String
-remOnlyNewLine = filter (/= '\n') . filter (/= '\r')
-
-
+getMusicDataText :: MusicData -> T.Text
+getMusicDataText dat = str
+  where str = mId `T.append` mLevel `T.append` mMusicTitle `T.append` mBmsID `T.append` mOrgArtist `T.append` mOrgArtistURL `T.append` mScoreSite `T.append` mScoreSiteURL `T.append` mComment `T.append` "\n"
+        mId = dID dat
+        mLevel = ", " `T.append` dLevel dat
+        mMusicTitle = ", " `T.append` dMusicTitle dat
+        mBmsID = ", " `T.append` dBmsID dat
+        mOrgArtist = ", " `T.append` dOrgArtist dat
+        mOrgArtistURL = ", " `T.append` dOrgArtistURL dat
+        mScoreSite = ", " `T.append` dScoreSite dat
+        mScoreSiteURL = ", " `T.append` dScoreSiteURL dat
+        mComment = ", " `T.append` dComment dat

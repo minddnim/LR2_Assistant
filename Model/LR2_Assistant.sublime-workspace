@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"en",
+				"encodeString	String -> String"
+			],
+			[
 				"pMusi",
 				"pMusicDatas	Parser [MusicData]"
 			],
@@ -59,7 +63,15 @@
 			"file": "Main.hs",
 			"settings":
 			{
-				"buffer_size": 1474,
+				"buffer_size": 535,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "mojicode.hs",
+			"settings":
+			{
+				"buffer_size": 347,
 				"line_ending": "Windows"
 			}
 		},
@@ -67,7 +79,7 @@
 			"file": "MusicDataParser.hs",
 			"settings":
 			{
-				"buffer_size": 2677,
+				"buffer_size": 3873,
 				"line_ending": "Windows"
 			}
 		},
@@ -132,6 +144,10 @@
 	},
 	"file_history":
 	[
+		"/C/Users/mind-s/Desktop/cinnamon-0.2/Cinnamon/Ucs.hs",
+		"/C/Users/mind-s/Desktop/cinnamon-0.2/Cinnamon.hs",
+		"/C/Users/mind-s/Desktop/cinnamon-0.2/Cinnamon/Misc.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/mojicode.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/main.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/musicDataParser.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/testParse.hs",
@@ -159,6 +175,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\" ",
+			"showComma",
 			"PTuple"
 		],
 		"highlight": true,
@@ -186,50 +204,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1474,
+						"buffer_size": 535,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								526,
-								526
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "MusicDataParser.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2677,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								44,
-								57
+								535,
+								535
 							]
 						],
 						"settings":
@@ -245,7 +228,69 @@
 					"type": "text"
 				},
 				{
+					"buffer": 1,
+					"file": "mojicode.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
 					"buffer": 2,
+					"file": "MusicDataParser.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1060,
+								1060
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 933.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
@@ -327,7 +372,7 @@
 		"cols":
 		[
 			0.0,
-			0.473269774011,
+			0.515642655367,
 			1.0
 		],
 		"rows":
@@ -339,7 +384,7 @@
 	"menu_visible": true,
 	"output.haskell_error_checker":
 	{
-		"height": 504.0
+		"height": 284.0
 	},
 	"output.haskell_sublime_load":
 	{
@@ -381,7 +426,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 150.0,
 	"status_bar_visible": true,
 	"template_settings":

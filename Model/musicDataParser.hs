@@ -1,129 +1,158 @@
+-- OverloadedStrings 言語拡張を使うとダブルクオートで囲んだ文字列を、
+-- Text、ByteString リテラルとして扱ってくれるようになります。 
+{-# LANGUAGE OverloadedStrings #-} 
+
 module MusicDataParser
 (
   MusicData(..),
   getMusicDatas
 ) where
 
-import Data.Attoparsec.ByteString.Char8 as AP
-import Data.ByteString.Char8 as B
+import qualified Data.Text as T
+import qualified Data.Attoparsec.Text as T
 import Control.Applicative
 
 data MusicData = MusicData {
-  dID :: Integer,
-  dLevel :: String,
-  dMusicTitle :: String,
-  dBmsID :: Integer,
-  dOrgArtist :: String,
-  dOrgArtistURL :: String,
-  dScoreSite :: String,
-  dScoreSiteURL :: String,
-  dComment :: String
+  dID :: T.Text,
+  dLevel :: T.Text,
+  dMusicTitle :: T.Text,
+  dBmsID :: T.Text,
+  dOrgArtist :: T.Text,
+  dOrgArtistURL :: T.Text,
+  dScoreSite :: T.Text,
+  dScoreSiteURL :: T.Text,
+  dComment :: T.Text
 } deriving (Show)
 
-getMusicDatas :: String -> [MusicData]
+
+getMusicDatas :: T.Text -> [MusicData]
 getMusicDatas str =
-  case parseOnly pMusicDatas byteStr of
+  case T.parseOnly pMusicDatas formatStr of
     Left _ -> error "parse error."
     Right results -> results
-  where byteStr = B.pack str
+  where formatStr = formatMusicData str
 
-pMusicDatas :: Parser [MusicData]
+pMusicDatas :: T.Parser [MusicData]
 pMusicDatas = do
-  string $ B.pack "var"
-  many space
-  string $ B.pack "mname"
-  many space
-  char '='
-  many space
-  char '['
-  many pMusicData
---  musicDatas <- many pMusicData
---  return musicDatas
+  T.string "var"
+  many T.space
+  T.string "mname"
+  many T.space
+  T.char '='
+  many T.space
+  T.char '['
+  musicDatas <- many pMusicData
+  many T.space
+  T.string "];"
+  return musicDatas
 
-pMusicData :: Parser MusicData
+pMusicData :: T.Parser MusicData
 pMusicData = do
-  char '['
-  iD <- B.unpack <$> pID
-  char ','
-  level <- B.unpack <$> pLevel
-  char ','
-  musicTitle <- B.unpack <$> pMusicTitle
-  char ','
-  bmsID <- B.unpack <$> pBmsID
-  char ','
+  T.char '['
+  iD <- pID
+  T.char ','
+  level <- pLevel
+  T.char ','
+  musicTitle <- pMusicTitle
+  T.char ','
+  bmsID <- pBmsID
+  T.char ','
   (artUrl, artName) <- pOrgArtistInfo
-  char ','
+  T.char ','
   (siteURL, siteName) <- pScoreSiteInfo
-  char ','
-  comment <- B.unpack <$> pComment
-  char ','
-  char ']'
-  char ','
-  many space
-  return $ MusicData (read iD) level musicTitle (read bmsID) artName artUrl siteName siteURL comment
+  T.char ','
+  comment <- pComment
+  T.char ','
+  T.char ']'
+  T.char ','
+  many T.space
+  return $ MusicData iD level musicTitle bmsID artName artUrl siteName siteURL comment
 
-pID :: Parser ByteString
-pID = AP.takeTill $ inClass ","
+pID :: T.Parser T.Text
+pID = T.takeTill $ T.inClass ","
 
-pLevel :: Parser ByteString
+pLevel :: T.Parser T.Text
 pLevel = pLevelHtmlTag <|> pLevelHtmlNoTag
 
-pMusicTitle :: Parser ByteString
+pMusicTitle :: T.Parser T.Text
 pMusicTitle = pGetInfo
 
-pBmsID :: Parser ByteString
+pBmsID :: T.Parser T.Text
 pBmsID = pGetInfo
 
-pOrgArtistInfo :: Parser (String, String)
+pOrgArtistInfo :: T.Parser (T.Text, T.Text)
 pOrgArtistInfo = pURLAndName <|> pNoURLAndName
 
-pScoreSiteInfo :: Parser (String, String)
+pScoreSiteInfo :: T.Parser (T.Text, T.Text)
 pScoreSiteInfo = pURLAndName <|> pNoURLAndName
 
-pComment :: Parser ByteString
+pComment :: T.Parser T.Text
 pComment = pGetInfo
 
-pLevelHtmlTag :: Parser ByteString
+pLevelHtmlTag :: T.Parser T.Text
 pLevelHtmlTag = do
-  char '"'
+  T.char '"'
   pHtmlTag
-  level <- AP.takeTill $ inClass "<"
+  level <- T.takeTill $ T.inClass "<"
   pHtmlTag
-  char '"'
+  T.char '"'
   return level
 
-pLevelHtmlNoTag :: Parser ByteString
+pLevelHtmlNoTag :: T.Parser T.Text
 pLevelHtmlNoTag = pGetInfo
 
-pURLAndName :: Parser (String, String)
+pURLAndName :: T.Parser (T.Text, T.Text)
 pURLAndName = do
-  char '"'
-  char '<'
-  AP.takeTill $ inClass "'"
-  char '\''
-  url <- AP.takeTill $ inClass "'"
-  char '\''
-  char '>'
-  name <- AP.takeTill $ inClass "<"
+  T.char '"'
+  T.char '<'
+  T.takeTill $ T.inClass "'"
+  T.char '\''
+  url <- T.takeTill $ T.inClass "'"
+  T.char '\''
+  T.char '>'
+  name <- T.takeTill $ T.inClass "<"
   pHtmlTag
-  char '"'
-  return (B.unpack url, B.unpack name)
+  T.char '"'
+  return (url, name)
 
-pNoURLAndName :: Parser (String, String)
+pNoURLAndName :: T.Parser (T.Text, T.Text)
 pNoURLAndName = do
   name <- pGetInfo
-  return ("", B.unpack name)
+  return ("", name)
 
-pHtmlTag :: Parser ByteString
+pHtmlTag :: T.Parser T.Text
 pHtmlTag = do
-  char '<'
-  content <- AP.takeTill $ inClass ">"
-  char '>'
+  T.char '<'
+  content <- T.takeTill $ T.inClass ">"
+  T.char '>'
   return content
 
-pGetInfo :: Parser ByteString
+pGetInfo :: T.Parser T.Text
 pGetInfo = do
-  char '"'
-  info <- AP.takeTill $ inClass "\""
-  char '"'
+  T.char '"'
+  info <- T.takeTill $ T.inClass "\""
+  T.char '"'
   return info
+
+
+formatMusicData :: T.Text -> T.Text
+formatMusicData str = defMusicSrc $ T.lines str
+
+defMusicSrc :: [T.Text] -> T.Text
+defMusicSrc = remOnlyNewLine . T.unlines . remBeginningSpace . searchMusicDefEnd . searchMusicDefStart
+
+searchMusicDefStart :: [T.Text] -> [T.Text]
+searchMusicDefStart (x:xs) | "var mname" `T.isInfixOf` x = x:xs
+                           | otherwise = searchMusicDefStart xs
+
+searchMusicDefEnd :: [T.Text] -> [T.Text]
+searchMusicDefEnd src = searchMusicDefEnd' src [""]
+  where searchMusicDefEnd' [] _ = error "Don't search Music Def End"
+        searchMusicDefEnd' (x:xs) ret | "];" `T.isInfixOf` x = reverse (x:ret)
+                                      | otherwise = searchMusicDefEnd' xs (x:ret)
+
+remBeginningSpace :: [T.Text] -> [T.Text]
+remBeginningSpace = map T.stripStart
+
+remOnlyNewLine :: T.Text -> T.Text
+remOnlyNewLine = T.filter (/= '\n') . T.filter (/= '\r')
