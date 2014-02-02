@@ -5,7 +5,8 @@
 module MusicDataParser
 (
   MusicData(..),
-  getMusicDatas
+  getMusicDatas,
+  getMusicDataSrc
 ) where
 
 import qualified Data.Text as T
@@ -13,7 +14,7 @@ import qualified Data.Attoparsec.Text as T
 import Control.Applicative
 
 data MusicData = MusicData {
-  dID :: T.Text,
+--  dID :: T.Text,
   dLevel :: T.Text,
   dMusicTitle :: T.Text,
   dBmsID :: T.Text,
@@ -25,6 +26,8 @@ data MusicData = MusicData {
 } deriving (Show)
 
 
+-- FromHPtoData
+
 getMusicDatas :: T.Text -> [MusicData]
 getMusicDatas str =
   case T.parseOnly pMusicDatas formatStr of
@@ -34,6 +37,7 @@ getMusicDatas str =
 
 pMusicDatas :: T.Parser [MusicData]
 pMusicDatas = do
+  many T.space
   T.string "var"
   many T.space
   T.string "mname"
@@ -48,25 +52,41 @@ pMusicDatas = do
 
 pMusicData :: T.Parser MusicData
 pMusicData = do
+  many T.space
   T.char '['
-  iD <- pID
-  T.char ','
+  many T.space
+  pID
+  pComma
   level <- pLevel
-  T.char ','
+  pComma
   musicTitle <- pMusicTitle
-  T.char ','
+  pComma
   bmsID <- pBmsID
-  T.char ','
+  pComma
   (artUrl, artName) <- pOrgArtistInfo
-  T.char ','
+  pComma
   (siteURL, siteName) <- pScoreSiteInfo
-  T.char ','
-  comment <- pComment
-  T.char ','
+  pComma
+  comment <- T.try pComment <|> return ""
+  pDataEnd
   T.char ']'
+  T.try pComma <|> return ""
+  return $ MusicData level musicTitle bmsID artName artUrl siteName siteURL comment
+
+pComma :: T.Parser T.Text
+pComma = do
+  many T.space
   T.char ','
   many T.space
-  return $ MusicData iD level musicTitle bmsID artName artUrl siteName siteURL comment
+  return ""
+
+pTab :: T.Parser T.Text
+pTab = do
+  T.char '\t'
+  return ""
+
+pDataEnd :: T.Parser T.Text
+pDataEnd = pComma <|> many T.space *> return ""
 
 pID :: T.Parser T.Text
 pID = T.takeTill $ T.inClass ","
@@ -139,7 +159,7 @@ formatMusicData :: T.Text -> T.Text
 formatMusicData str = defMusicSrc $ T.lines str
 
 defMusicSrc :: [T.Text] -> T.Text
-defMusicSrc = remOnlyNewLine . T.unlines . remBeginningSpace . searchMusicDefEnd . searchMusicDefStart
+defMusicSrc = remOnlyNewLineAndTab . T.unlines . searchMusicDefEnd . searchMusicDefStart
 
 searchMusicDefStart :: [T.Text] -> [T.Text]
 searchMusicDefStart (x:xs) | "var mname" `T.isInfixOf` x = x:xs
@@ -151,8 +171,38 @@ searchMusicDefEnd src = searchMusicDefEnd' src [""]
         searchMusicDefEnd' (x:xs) ret | "];" `T.isInfixOf` x = reverse (x:ret)
                                       | otherwise = searchMusicDefEnd' xs (x:ret)
 
-remBeginningSpace :: [T.Text] -> [T.Text]
-remBeginningSpace = map T.stripStart
+remOnlyNewLineAndTab :: T.Text -> T.Text
+remOnlyNewLineAndTab = T.filter (/= '\t') . T.filter (/= '\n') . T.filter (/= '\r')
 
-remOnlyNewLine :: T.Text -> T.Text
-remOnlyNewLine = T.filter (/= '\n') . T.filter (/= '\r')
+main :: IO()
+main = print $ show $ getMusicDatas "var mname = [[77,\"◎2\",      \"P8107 [yumether◎]\",      \"126849\",      \"<a href='http://yumerusabun.web.fc2.com/nue.html'>夢瑠</a>\",      \"<a href='http://web.archive.org/web/20070111193502/www107.sakura.ne.jp/~onoken/htmls/bms.html'>ONOKEN</a>\",    ],];"
+
+-- FromDatatoHTML
+getMusicDataSrc :: T.Text -> [MusicData]
+getMusicDataSrc str = 
+  case T.parseOnly pMusicDataFromTsvs str of
+    Left _ -> error "parse error."
+    Right results -> results
+
+pMusicDataFromTsvs :: T.Parser [MusicData]
+pMusicDataFromTsvs = many pMusicDataFromTsv
+
+pMusicDataFromTsv :: T.Parser MusicData
+pMusicDataFromTsv = do
+  level <- T.takeTill $ T.inClass "\t"
+  pTab
+  musicTitle <- T.takeTill $ T.inClass "\t"
+  pTab
+  bmsID <- T.takeTill $ T.inClass "\t"
+  pTab
+  artName <- T.takeTill $ T.inClass "\t"
+  pTab
+  artUrl <- T.takeTill $ T.inClass "\t"
+  pTab
+  siteName <- T.takeTill $ T.inClass "\t"
+  pTab
+  siteURL <- T.takeTill $ T.inClass "\t"
+  pTab
+  comment <- T.takeTill $ T.inClass "\n"
+  T.endOfLine
+  return $ MusicData level musicTitle bmsID artName artUrl siteName siteURL comment
