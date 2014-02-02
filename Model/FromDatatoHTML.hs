@@ -13,7 +13,7 @@ main :: IO()
 main = do
   args <- getArgs
   exeFileName <- getArgv0
-  contents <- readFile $ getDirPath (show exeFileName) ++ "outHtmlSrc.txt"
+  contents <- readFile $ getDirPath (show exeFileName) ++ "defHtmlFileName.txt"
   let outFileName = head $ lines contents
       outHtmlFileName = outFileName ++ ".html"
   musicContents <- readFile $ head args
@@ -75,7 +75,7 @@ ifStr datas = "if(" `T.append` condStr `T.append` ")\n"
 getCondStr :: [MusicData] -> T.Text
 getCondStr datas = T.concat $ L.intersperse "||" condIdListText 
   where (x:xs) = zip [1..] datas
-        condIdList = map fst $ remCond xs [x] 
+        condIdList = map fst $ remCond (x:xs) [x] 
         condIdListStr = map show condIdList
         condIdListText = map (("mname[i][0]==" `T.append`) . T.pack) condIdListStr
 
