@@ -6,34 +6,22 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as T
 import Data.List as L
 import System.Environment(getArgs)
-import System.Argv0
 import MusicDataParser
 
 main :: IO()
 main = do
   args <- getArgs
-  exeFileName <- getArgv0
-  contents <- readFile $ getDirPath (show exeFileName) ++ "defHtmlFileName.txt"
+  contents <- readFile $ "./" ++ "defHtmlFileName.txt"
   let outFileName = head $ lines contents
       outHtmlFileName = outFileName ++ ".html"
   musicContents <- readFile $ head args
-  headerContents <- readFile $ getDirPath (show exeFileName) ++ "tableHeader.html"
-  footerContents <- readFile $ getDirPath (show exeFileName) ++ "tableFooter.html"
+  headerContents <- readFile $ "./" ++ "tableHeader.html"
+  footerContents <- readFile $ "./" ++ "tableFooter.html"
   let outputSrc = T.concat [T.pack headerContents,defData,forStr,ifStr musicDatas,T.pack footerContents]
       musicDataTsv = T.pack $ unlines $ tail $ lines musicContents
       musicDatas = getMusicDataSrc musicDataTsv
       defData = defVarMNameStr musicDatas
   T.writeFile　outHtmlFileName outputSrc
-
-getDirPath :: String -> String
-getDirPath str = tail $ reverse $ dropWhile ('\\' /=) $ reverse $ dropWhile ('"' /=) str
-
-derimita :: T.Text
-derimita = "\t"
-
---defineMusicDataStart :: [MusicData] -> T.Text
---defineMusicDataStart x = T.pack "///////////////////曲のデータ(" `T.append` dataNumStr `T.append` T.pack "番まで使ってるよ！)///////////////////\n"
---  where dataNumStr = T.pack $ show $ length x
 
 defVarMNameStr :: [MusicData] -> T.Text
 defVarMNameStr datas = T.concat varMName
@@ -46,7 +34,10 @@ getVarMNames datas = L.intersperse "," $ zipWith (curry getVarMName) [1 ..] data
 
 getVarMName :: (Int, MusicData) -> T.Text
 getVarMName (n,x) = T.concat dataDef
-  where level = dLevel x
+  where levelColor = dLevelColor x
+        level = dLevel x
+        levelStr | levelColor == "" = level
+                 | otherwise = "<font color=\'" `T.append` levelColor `T.append` "\'>" `T.append` level `T.append` "</font>"
         musicTitle = dMusicTitle x
         bmsID = dBmsID x
         orgArtist = dOrgArtist x
@@ -62,7 +53,7 @@ getVarMName (n,x) = T.concat dataDef
                  | scoreSiteURL /= "" = "<a href='" `T.append` scoreSiteURL `T.append`"'>" `T.append` "___________" `T.append` "</a>"
                  | otherwise = ""
         comment = dComment x
-        dataDef = ["\n[",T.pack (show n),",\"",level,p,musicTitle,p,bmsID,p,orgStr,p,scoreStr,p,comment,"\",\n]"]
+        dataDef = ["\n[",T.pack (show n),",\"",levelStr,p,musicTitle,p,bmsID,p,orgStr,p,scoreStr,p,comment,"\",\n]"]
         p = "\",\n\""
 
 forStr :: T.Text

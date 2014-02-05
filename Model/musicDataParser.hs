@@ -10,11 +10,12 @@ module MusicDataParser
 ) where
 
 import qualified Data.Text as T
-import qualified Data.Attoparsec.Text as T
+import qualified Data.Attoparsec.Text as T hiding (takeWhile)
 import Control.Applicative
 
 data MusicData = MusicData {
 --  dID :: T.Text,
+  dLevelColor :: T.Text,
   dLevel :: T.Text,
   dMusicTitle :: T.Text,
   dBmsID :: T.Text,
@@ -57,7 +58,7 @@ pMusicData = do
   many T.space
   pID
   pComma
-  level <- pLevel
+  (color, level) <- pLevel
   pComma
   musicTitle <- pMusicTitle
   pComma
@@ -71,7 +72,7 @@ pMusicData = do
   pDataEnd
   T.char ']'
   T.try pComma <|> return ""
-  return $ MusicData level musicTitle bmsID artName artUrl siteName siteURL comment
+  return $ MusicData color level musicTitle bmsID artName artUrl siteName siteURL comment
 
 pComma :: T.Parser T.Text
 pComma = do
@@ -91,7 +92,7 @@ pDataEnd = pComma <|> many T.space *> return ""
 pID :: T.Parser T.Text
 pID = T.takeTill $ T.inClass ","
 
-pLevel :: T.Parser T.Text
+pLevel :: T.Parser (T.Text, T.Text)
 pLevel = pLevelHtmlTag <|> pLevelHtmlNoTag
 
 pMusicTitle :: T.Parser T.Text
@@ -109,17 +110,19 @@ pScoreSiteInfo = pURLAndName <|> pNoURLAndName
 pComment :: T.Parser T.Text
 pComment = pGetInfo
 
-pLevelHtmlTag :: T.Parser T.Text
+pLevelHtmlTag :: T.Parser (T.Text, T.Text)
 pLevelHtmlTag = do
   T.char '"'
-  pHtmlTag
+  color <- T.try (pHtmlTagGetAttribute "color" <|> pHtmlTag *> "")
   level <- T.takeTill $ T.inClass "<"
   pHtmlTag
   T.char '"'
-  return level
+  return (color, level)
 
-pLevelHtmlNoTag :: T.Parser T.Text
-pLevelHtmlNoTag = pGetInfo
+pLevelHtmlNoTag :: T.Parser (T.Text, T.Text)
+pLevelHtmlNoTag = do
+  level <- pGetInfo
+  return ("", level)
 
 pURLAndName :: T.Parser (T.Text, T.Text)
 pURLAndName = do
@@ -147,13 +150,29 @@ pHtmlTag = do
   T.char '>'
   return content
 
+pHtmlTagGetAttribute :: T.Text -> T.Parser T.Text
+pHtmlTagGetAttribute att = do
+  T.char '<'
+  contents <- T.takeTill $ T.inClass ">"
+  T.char '>'
+  return $ getAttribute att contents
+
+getAttribute :: T.Text -> T.Text-> T.Text
+getAttribute att cont | not (attStr `T.isInfixOf` cont) = ""
+                      | otherwise = ret
+  where contStr = T.toLower cont
+        attStr = T.toLower att
+        attElemStr = snd $ T.breakOnEnd attStr contStr
+        ret = T.takeWhile endCond $ T.tail $ T.dropWhile beginCond attElemStr
+        beginCond x = x /= '"' && x /= '\''
+        endCond x = x /= '"' && x /= '\''
+
 pGetInfo :: T.Parser T.Text
 pGetInfo = do
   T.char '"'
   info <- T.takeTill $ T.inClass "\""
   T.char '"'
   return info
-
 
 formatMusicData :: T.Text -> T.Text
 formatMusicData str = defMusicSrc $ T.lines str
@@ -174,8 +193,8 @@ searchMusicDefEnd src = searchMusicDefEnd' src [""]
 remOnlyNewLineAndTab :: T.Text -> T.Text
 remOnlyNewLineAndTab = T.filter (/= '\t') . T.filter (/= '\n') . T.filter (/= '\r')
 
-main :: IO()
-main = print $ show $ getMusicDatas "var mname = [[77,\"◎2\",      \"P8107 [yumether◎]\",      \"126849\",      \"<a href='http://yumerusabun.web.fc2.com/nue.html'>夢瑠</a>\",      \"<a href='http://web.archive.org/web/20070111193502/www107.sakura.ne.jp/~onoken/htmls/bms.html'>ONOKEN</a>\",    ],];"
+--main :: IO()
+--main = print $ show $ getMusicDatas "var mname = [[77,\"<font size=\"5\" color=\"#ff0000\">◎2</font>\",      \"P8107 [yumether◎]\",      \"126849\",      \"<a href='http://yumerusabun.web.fc2.com/nue.html'>夢瑠</a>\",      \"<a href='http://web.archive.org/web/20070111193502/www107.sakura.ne.jp/~onoken/htmls/bms.html'>ONOKEN</a>\",    ],];"
 
 -- FromDatatoHTML
 getMusicDataSrc :: T.Text -> [MusicData]
@@ -189,6 +208,8 @@ pMusicDataFromTsvs = many pMusicDataFromTsv
 
 pMusicDataFromTsv :: T.Parser MusicData
 pMusicDataFromTsv = do
+  color <- T.takeTill $ T.inClass "\t"
+  pTab
   level <- T.takeTill $ T.inClass "\t"
   pTab
   musicTitle <- T.takeTill $ T.inClass "\t"
@@ -205,4 +226,4 @@ pMusicDataFromTsv = do
   pTab
   comment <- T.takeTill $ T.inClass "\n"
   T.endOfLine
-  return $ MusicData level musicTitle bmsID artName artUrl siteName siteURL comment
+  return $ MusicData color level musicTitle bmsID artName artUrl siteName siteURL comment
