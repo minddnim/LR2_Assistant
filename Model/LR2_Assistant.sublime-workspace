@@ -4,12 +4,168 @@
 		"selected_items":
 		[
 			[
-				"en",
-				"encodeString	String -> String"
+				"Player",
+				"PlayerData"
+			],
+			[
+				"dd",
+				"dDJName"
+			],
+			[
+				"pPlayer",
+				"pPlayerCntFromIRSite"
+			],
+			[
+				"pClearS",
+				"pClearStatusBeginStr"
+			],
+			[
+				"mClear",
+				"mClearData"
+			],
+			[
+				"dDj",
+				"dDJName"
+			],
+			[
+				"pGet",
+				"pGetPlayerCnt"
+			],
+			[
+				"getPlay",
+				"getPlayerCntStr"
+			],
+			[
+				"pRead",
+				"pReadLineIRSite"
+			],
+			[
+				"show",
+				"Show"
+			],
+			[
+				"no",
+				"noteOP"
+			],
+			[
+				"td",
+				"tdE"
+			],
+			[
+				"tr",
+				"trS"
+			],
+			[
+				"hard",
+				"hardClearRate"
+			],
+			[
+				"Music",
+				"MusicClearStatus"
+			],
+			[
+				"getM",
+				"getMusicClearStatus"
+			],
+			[
+				"getm",
+				"getMusicClearStatus"
+			],
+			[
+				"ret",
+				"ret"
+			],
+			[
+				"a",
+				"append"
+			],
+			[
+				"get",
+				"getVarMName"
 			],
 			[
 				"pMusi",
-				"pMusicDatas	Parser [MusicData]"
+				"pMusicDataFromTsv"
+			],
+			[
+				"pMusicDataFromTs",
+				"pMusicDataFromTsvs"
+			],
+			[
+				"pMu",
+				"pMusicDataFromTsv"
+			],
+			[
+				"readF",
+				"readFilePath"
+			],
+			[
+				"writeF",
+				"writeFileName"
+			],
+			[
+				"main",
+				"mainDataFieldStartStr"
+			],
+			[
+				"headerFile",
+				"headerFieldStartStr"
+			],
+			[
+				"str",
+				"String"
+			],
+			[
+				"convKey",
+				"convKeyLaneListToMainDataField"
+			],
+			[
+				"objs",
+				"objsData"
+			],
+			[
+				"to",
+				"toList	Map k a -> [(k, a)]"
+			],
+			[
+				"Sin",
+				"singleton	Char -> Text"
+			],
+			[
+				"Main",
+				"MainDataField	"
+			],
+			[
+				"r",
+				"rhythm2"
+			],
+			[
+				"rh",
+				"rhythm1"
+			],
+			[
+				"kInfo",
+				"kInfo1"
+			],
+			[
+				"Bar",
+				"BarContents	"
+			],
+			[
+				"div",
+				"divNotesData"
+			],
+			[
+				"No",
+				"NotesData"
+			],
+			[
+				"obj",
+				"objsData"
+			],
+			[
+				"en",
+				"encodeString	String -> String"
 			],
 			[
 				"pLe",
@@ -60,18 +216,10 @@
 	"buffers":
 	[
 		{
-			"file": "Main.hs",
+			"file": "FromHPtoSSPtData.hs",
 			"settings":
 			{
-				"buffer_size": 535,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "mojicode.hs",
-			"settings":
-			{
-				"buffer_size": 347,
+				"buffer_size": 3278,
 				"line_ending": "Windows"
 			}
 		},
@@ -79,33 +227,31 @@
 			"file": "MusicDataParser.hs",
 			"settings":
 			{
-				"buffer_size": 3873,
+				"buffer_size": 17856,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "GHCi, version 7.6.3: http://www.haskell.org/ghc/  :? for help\nLoading package ghc-prim ... linking ... done.\nLoading package integer-gmp ... linking ... done.\nLoading package base ... linking ... done.\nPrelude> ",
-			"settings":
-			{
-				"buffer_size": 211,
-				"line_ending": "Windows",
-				"name": "*REPL* [haskell]",
-				"scratch": true
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/Haskell/Haskell.sublime-build",
 	"command_palette":
 	{
-		"height": 257.0,
+		"height": 104.0,
 		"selected_items":
 		[
 			[
-				"Package Control: ",
+				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"install",
+				"repl haskel",
+				"SublimeREPL: Haskell"
+			],
+			[
+				"haskell",
+				"Set Syntax: Haskell"
+			],
+			[
+				"Package Control: ",
 				"Package Control: Install Package"
 			],
 			[
@@ -144,15 +290,48 @@
 	},
 	"file_history":
 	[
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoAllPlayerData.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoClearCount.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/MusicDataParser.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromDatatoHTML.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/CalcRankingPoint.hs",
+		"/C/Users/mind-s/Documents/GitHub/DesignPattern/TemplateMethod.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoAllPlayerData.bat",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/BmsAnalysis.hs",
+		"/C/Users/mind-s/Desktop/bms_sara_ClearData/bms_sara_ClearData1.html",
+		"/C/Users/mind-s/Desktop/__jquery.tablesorter/themes/green/style1.css",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromBmsDatatoHTML.hs",
+		"/C/Users/mind-s/Desktop/__jquery.tablesorter/themes/green/style.css",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/Bmsparser.hs",
+		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeHaskell/Settings/SublimeHaskell.sublime-settings",
+		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeHaskell/ModuleInspector.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR_SaraTableClearCount/Model/FromHPtoClearCount.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR_SaraTableClearCount/Model/MusicDataParser.hs",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/ConvertALLSCR.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromBmsDatatoHTML_build.bat",
+		"/C/Users/mind-s/Desktop/bmsDataTable/bms_sara_data_clear.html",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoData.hs",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/bmsAnalysis.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/Main.hs",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/    Not in scope",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/    In an equation for `getScrLaneListHead'",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/      Actual type",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/    Expected type",
+		"/C/Users/mind-s/Documents/GitHub/DesignPattern/Factory.hs",
+		"/C/Users/mind-s/Documents/GitHub/DesignPattern/FactoryMethod.hs",
+		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/User/Default.sublime-keymap",
+		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeHaskell/Keymaps/Default.sublime-keymap",
+		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/User/SublimeHaskell.sublime-settings",
+		"/C/Users/mind-s/Desktop/bms_sara.html",
+		"/C/haskell/test.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/DBControll.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/mojicode.hs",
 		"/C/Users/mind-s/Desktop/cinnamon-0.2/Cinnamon/Ucs.hs",
 		"/C/Users/mind-s/Desktop/cinnamon-0.2/Cinnamon.hs",
 		"/C/Users/mind-s/Desktop/cinnamon-0.2/Cinnamon/Misc.hs",
-		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/mojicode.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/main.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/musicDataParser.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/testParse.hs",
-		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeHaskell/ModuleInspector.hs",
-		"/C/haskell/test.hs",
 		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
 		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/User/SublimeREPL.sublime-settings",
 		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
@@ -175,6 +354,67 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ScratchSkillPtRanking",
+			"convertDatas",
+			"map",
+			"length",
+			"filter",
+			"\n",
+			"PlayerData",
+			"convertDatas",
+			"getMusicClearStatus",
+			"pGetClearStatus",
+			"head",
+			"getPlayerCntFromIRSite",
+			"pGetPlayerMDataInfos",
+			"pPlayerMusicDataInfos",
+			"pReadLineIRSite",
+			"getPlayerMusicDataInfoFromIRSite",
+			"getMusicClearStatus",
+			"pGetClearStatus",
+			"pPlayerDataBeginStr",
+			"getMusicClearStatus",
+			"head",
+			"MusicData",
+			"PlayerMusicDataInfo",
+			"PlayerData",
+			"PlayerMusicDataInfo",
+			"PlayerData",
+			"getPlayerCntFromIRSite",
+			"defVarMNameStr",
+			"pGetPlayerMDataInfos",
+			"getPlayerMusicDataInfoFromIRSite",
+			"pReadLine",
+			"formatMusicData",
+			"Htmltag",
+			"black'>ID</font></th>\n			<th align=\"center\"><font color='black'>◎</font></th>\n			<th align=\"center\"><font color='black'>music title</font></th>\n			<th align=\"center\"><font color='black'>FC Rate</font></th>\n			<th align=\"center\"><font color='black'>Hard Rate</font></th>\n			<th align=\"center\"><font color='black'>Clear Rate</font></th>\n			<th align=\"center\"><font color='black'>FC</font></th>\n			<th align=\"center\"><font color='black'>Hard</font></th>\n			<th align=\"center\"><font color='black'>Normal</font></th>\n			<th align=\"center\"><font color='black'>Easy</font></th>\n			<th align=\"center\"><font color='black'>Failed</font></th>\n			<th align=\"center\"><font color='black'>Player</font></th>\n		</tr>",
+			"read",
+			"try",
+			"end",
+			"getTotalValue",
+			"getMainDataField",
+			"getObjs",
+			"getKId",
+			"mainDataStr",
+			"mainDataFieldStartStr",
+			"getMainDataField",
+			"convObjs",
+			"chunk",
+			"pHtmlTag",
+			"pHtmlColorTag",
+			"pGetInfo",
+			"pLevelHtmlTag",
+			"pLevel",
+			"font color",
+			"formatMusicData",
+			"take",
+			"formatMusicData",
+			"getMusicDatas",
+			"convAllScr",
+			"pHFData",
+			"T.",
+			"T.Text",
+			"Prelude",
 			"\" ",
 			"showComma",
 			"PTuple"
@@ -185,6 +425,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"Text",
+			"L"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -200,58 +443,33 @@
 			[
 				{
 					"buffer": 0,
-					"file": "Main.hs",
+					"file": "FromHPtoSSPtData.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 535,
+						"buffer_size": 3278,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								535,
-								535
+								2717,
+								2717
 							]
 						],
 						"settings":
 						{
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1257.0,
 						"zoom_level": 1.0
 					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "mojicode.hs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 347,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								212,
-								212
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -261,84 +479,34 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "MusicDataParser.hs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3873,
+						"buffer_size": 17856,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1060,
-								1060
+								15916,
+								15916
 							]
 						],
 						"settings":
 						{
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 933.0,
+						"translation.y": 12455.0,
 						"zoom_level": 1.0
 					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 211,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								211,
-								211
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"auto_indent": false,
-							"detect_indentation": false,
-							"gutter": false,
-							"history_arrows": true,
-							"indent_subsequent_lines": false,
-							"line_numbers": false,
-							"repl": true,
-							"repl_external_id": "haskell",
-							"repl_id": "f9cc533f955244f09de4ea050d512b09",
-							"repl_restart_args":
-							{
-								"cmd":
-								[
-									"ghci"
-								],
-								"cwd": "$file_path",
-								"encoding": "utf8",
-								"external_id": "haskell",
-								"syntax": "Packages/Haskell/Haskell.tmLanguage",
-								"type": "sublime_haskell"
-							},
-							"repl_sublime2": false,
-							"smart_indent": false,
-							"spell_check": false,
-							"syntax": "Packages/Haskell/Haskell.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -372,7 +540,7 @@
 		"cols":
 		[
 			0.0,
-			0.515642655367,
+			0.679998953097,
 			1.0
 		],
 		"rows":
@@ -382,9 +550,17 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 205.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
 	"output.haskell_error_checker":
 	{
-		"height": 284.0
+		"height": 465.0
 	},
 	"output.haskell_sublime_load":
 	{
@@ -393,7 +569,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 58.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":
