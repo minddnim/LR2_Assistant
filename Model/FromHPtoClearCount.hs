@@ -34,7 +34,9 @@ main = do
   footerContents <- readFile $ "./" ++ "tableFooter.html"
   mClearDataTpl <- forM musicDatas $ \mData -> do
     mHtml <- openURL $ musicURLBase ++ T.unpack (dBmsID mData)
+    print $ musicURLBase ++ T.unpack (dBmsID mData)
     let mClearData = getMusicClearStatus mHtml
+    print $ show mClearData
     return (mData, mClearData)
   let outputSrc = T.concat [T.pack headerContents,updateTimeStr,defData,T.pack footerContents]
       updateTimeStr = T.pack $ "document.write(\"<font color='white'>update : " ++ ymdString ++ "_" ++ timeString ++ "</font>\")\n"
@@ -58,14 +60,19 @@ getVarMName (n,(x,y)) = T.concat dataDef
         strFcRate = T.pack fcRate
         strHardClearRate = T.pack hardClearRate
         strClearRate = T.pack clearRate
-        fcRate = printf "%.2f" $ (fromIntegral fcClear::Float) / (fromIntegral player::Float) * 100
-        fcClear = sum $ map (read . T.unpack) [strFC]
-        hardClearRate = printf "%.2f" $ (fromIntegral hardClear::Float) / (fromIntegral player::Float) * 100
-        hardClear = sum $ map (read . T.unpack) [strFC, strHard]
-        clearRate = printf "%.2f" $ (fromIntegral clear::Float) / (fromIntegral player::Float) * 100
-        clear = sum $ map (read . T.unpack) [strFC, strHard, strNormal]
-        player = sum $ map (read . T.unpack) [strFC, strHard, strNormal, strEasy, strFailed]
+        fcRate = printf "%.2f" $ fcClear / player * 100
+        fcClear = sum [fccnt]
+        hardClearRate = printf "%.2f" $ hardClear / player * 100
+        hardClear = sum [fccnt, hardcnt]
+        clearRate = printf "%.2f" $ (clear / player) * 100
+        clear = sum [fccnt, hardcnt, normalcnt]
+        player = sum [fccnt, hardcnt, normalcnt, easycnt, failedcnt]
         strPlayer = T.pack $ show player
+        fccnt = read (T.unpack strFC) :: Float
+        hardcnt = read (T.unpack strHard) :: Float
+        normalcnt = read (T.unpack strNormal) :: Float
+        easycnt = read (T.unpack strEasy) :: Float
+        failedcnt = read (T.unpack strFailed) :: Float
         strFC = dFC y
         strHard = dHard y
         strNormal = dNormal y

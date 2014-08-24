@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"max",
+				"maxbpm"
+			],
+			[
+				"minbpm",
+				"minbpm"
+			],
+			[
+				"INt",
+				"Int"
+			],
+			[
+				"dani",
+				"daniResults"
+			],
+			[
+				"div",
+				"divDaniAndUrl"
+			],
+			[
+				"end",
+				"endOfLine"
+			],
+			[
+				"ge",
+				"getDirPath"
+			],
+			[
 				"Player",
 				"PlayerData"
 			],
@@ -152,10 +180,6 @@
 				"BarContents	"
 			],
 			[
-				"div",
-				"divNotesData"
-			],
-			[
 				"No",
 				"NotesData"
 			],
@@ -216,18 +240,45 @@
 	"buffers":
 	[
 		{
-			"file": "FromHPtoSSPtData.hs",
+			"contents": "\n<!DOCTYPE HTML PLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<html lang=\"ja\">\n<head>\n	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Shift_JIS\">\n	<title>皿難易度表Rankingページ</title>\n	<meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\">\n<link rel=\"stylesheet\" href=\"./themes/green/style1.css\" type=\"text/css\" media=\"print, projection, screen\" />\n<script src=\"./jquery-latest.js\" type=\"text/javascript\"></script> \n<script src=\"./jquery.tablesorter.min.js\" type=\"text/javascript\"></script> \n<Meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Shift_JIS\">\n  <body>\n  <nav class=\"navbar navbar-inverse navbar-fixed-top\">\n  <div class=\"navbar-header\">\n  <button class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".target\">\n  <span class=\"icon-bar\"></span>\n  <span class=\"icon-bar\"></span>\n  <span class=\"icon-bar\"></span>\n  <span class=\"icon-bar\"></span>\n  </button>  \n  <a class=\"navbar-brand\" href=\"\">Ranking</a>\n  </div>\n\n  <div class=\"collapse navbar-collapse target\">\n    <ul class=\"nav navbar-nav\">\n    <li><a href=\"\">SSPt簡単系部門</a></li>\n    <li><a href=\"\">SSPt中難易度部門</a></li>\n    <li><a href=\"\">SSPt高難易度部門</a></li>\n    <li><a href=\"\">SSPt◎-1</a></li>\n    <li><a href=\"\">SSPt◎0</a></li>\n    <li><a href=\"\">SSPt◎1</a></li>\n    <li><a href=\"\">SSPt◎2</a></li>\n    <li><a href=\"\">SSPt◎3</a></li>\n    <li><a href=\"\">SSPt◎4</a></li>\n    <li><a href=\"\">ClearPt</a></li>\n    </ul>\n  </div>\n  </nav>\n    <div class=\"container\" style=\"padding:20px 0\">\n      <table align=\"center\" cellspacing=\"3\" id=\"table1\" class=\"tablesorter\">\n        <thead>\n          <tr>\n            <th align=\"center\"><font color='white'>Rank</font></th>\n            <th align=\"center\"><font color='white'>DJName</font></th>\n            <th align=\"center\"><font color='white'>段位(H/N)</font></th>\n            <th align=\"center\"><font color='white'>ClearPt</font></th>\n            <th align=\"center\"><font color='white'>FC</font></th>\n            <th align=\"center\"><font color='white'>Hard</font></th>\n            <th align=\"center\"><font color='white'>Clear</font></th>\n            <th align=\"center\"><font color='white'>Easy</font></th>\n            <th align=\"center\"><font color='white'>Failed</font></th>\n            <th align=\"center\"><font color='white'>NoPlay</font></th>\n          </tr>\n        </thead>\n        <script language=\"javascript\" type=\"text/javascript\">\n",
+			"file": "/C/Users/mind-s/Documents/GitHub/minddnimHP/bms_sara_ClearRanking/tableHeader.html",
+			"file_size": 2559,
+			"file_write_time": 130406485278211125,
 			"settings":
 			{
-				"buffer_size": 3278,
+				"buffer_size": 2470,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "\n<!DOCTYPE HTML PLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<html lang=\"ja\">\n<head>\n	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Shift_JIS\">\n	<title>皿難易度表Rankingページ</title>\n	<meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\">\n<link rel=\"stylesheet\" href=\"./themes/green/style1.css\" type=\"text/css\" media=\"print, projection, screen\" />\n<script src=\"./jquery-latest.js\" type=\"text/javascript\"></script> \n<script src=\"./jquery.tablesorter.min.js\" type=\"text/javascript\"></script> \n<Meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Shift_JIS\">\n  <body>\n  <nav class=\"navbar navbar-inverse navbar-fixed-top\">\n  <div class=\"navbar-header\">\n  <button class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".target\">\n  <span class=\"icon-bar\"></span>\n  <span class=\"icon-bar\"></span>\n  <span class=\"icon-bar\"></span>\n  <span class=\"icon-bar\"></span>\n  </button>  \n  <a class=\"navbar-brand\" href=\"\">Ranking</a>\n  </div>\n\n  <div class=\"collapse navbar-collapse target\">\n    <ul class=\"nav navbar-nav\">\n    <li><a href=\"\">SSPt簡単系部門</a></li>\n    <li><a href=\"\">SSPt中難易度部門</a></li>\n    <li><a href=\"\">SSPt高難易度部門</a></li>\n    <li><a href=\"\">SSPt◎-1</a></li>\n    <li><a href=\"\">SSPt◎0</a></li>\n    <li><a href=\"\">SSPt◎1</a></li>\n    <li><a href=\"\">SSPt◎2</a></li>\n    <li><a href=\"\">SSPt◎3</a></li>\n    <li><a href=\"\">SSPt◎4</a></li>\n    <li><a href=\"\">ClearPt</a></li>\n    </ul>\n  </div>\n  </nav>\n    <div class=\"container\" style=\"padding:20px 0\">\n      <table align=\"center\" cellspacing=\"3\" id=\"table1\" class=\"tablesorter\">\n        <thead>\n          <tr>\n            <th align=\"center\"><font color='white'>Rank</font></th>\n            <th align=\"center\"><font color='white'>DJName</font></th>\n            <th align=\"center\"><font color='white'>段位(H/N)</font></th>\n            <th align=\"center\"><font color='white'>ClearPt</font></th>\n            <th align=\"center\"><font color='white'>FC</font></th>\n            <th align=\"center\"><font color='white'>Hard</font></th>\n            <th align=\"center\"><font color='white'>Clear</font></th>\n            <th align=\"center\"><font color='white'>Easy</font></th>\n            <th align=\"center\"><font color='white'>Failed</font></th>\n            <th align=\"center\"><font color='white'>NoPlay</font></th>\n          </tr>\n        </thead>\n        <script language=\"javascript\" type=\"text/javascript\">\ndocument.write(\"<font color='white'>update : 2014-03-30_19-25-50</font>\")\nvar mname = [\n[1,\"えいゆう\",\n\"5992\",\n\"<font color='red'>七段</font>\",\n\"<font color='blue'>皆伝</font>\",\n\"3655\",\n\"77\",\n\"67\",\n\"0\",\n\"1\",\n\"0\",\n\"0\",\n],\n[2,\"TAKE**\",\n\"26980\",\n\"<font color='red'>三段</font>\",\n\"<font color='blue'>九段</font>\",\n\"3395\",\n\"55\",\n\"86\",\n\"1\",\n\"3\",\n\"0\",\n\"0\",\n],\n[3,\"ALLSCR\",\n\"2862\",\n\"<font color='red'>四段</font>\",\n\"<font color='blue'>十段</font>\",\n\"3240\",\n\"53\",\n\"79\",\n\"2\",\n\"10\",\n\"1\",\n\"0\",\n],\n[4,\"AK-RED.R\",\n\"3198\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>皆伝</font>\",\n\"2205\",\n\"20\",\n\"76\",\n\"6\",\n\"5\",\n\"3\",\n\"35\",\n],\n[5,\"Musaeus\",\n\"23446\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"1970\",\n\"31\",\n\"49\",\n\"6\",\n\"0\",\n\"3\",\n\"56\",\n],\n[6,\"ベニヤ板\",\n\"66082\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"1925\",\n\"15\",\n\"73\",\n\"1\",\n\"1\",\n\"1\",\n\"54\",\n],\n[7,\"RGHT\",\n\"59603\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>九段</font>\",\n\"1905\",\n\"7\",\n\"70\",\n\"22\",\n\"15\",\n\"15\",\n\"16\",\n],\n[8,\"ξ青龍ξ\",\n\"4314\",\n\"<font color='red'>七段</font>\",\n\"<font color='blue'>皆伝</font>\",\n\"1645\",\n\"0\",\n\"81\",\n\"2\",\n\"1\",\n\"0\",\n\"61\",\n],\n[9,\"HATOko\",\n\"35763\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>四段</font>\",\n\"1550\",\n\"5\",\n\"70\",\n\"0\",\n\"0\",\n\"25\",\n\"45\",\n],\n[10,\"KASAKO\",\n\"37895\",\n\"<font color='red'>二級</font>\",\n\"<font color='blue'>五段</font>\",\n\"1480\",\n\"12\",\n\"49\",\n\"0\",\n\"28\",\n\"17\",\n\"39\",\n],\n[11,\"RIE.\",\n\"53101\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>五段</font>\",\n\"1170\",\n\"6\",\n\"41\",\n\"15\",\n\"4\",\n\"24\",\n\"55\",\n],\n[12,\"殿下\",\n\"9531\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"1135\",\n\"6\",\n\"46\",\n\"3\",\n\"1\",\n\"3\",\n\"86\",\n],\n[13,\"XYZ\",\n\"47346\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"1105\",\n\"4\",\n\"47\",\n\"1\",\n\"7\",\n\"33\",\n\"53\",\n],\n[14,\"不乱人形\",\n\"7137\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"1085\",\n\"6\",\n\"41\",\n\"1\",\n\"15\",\n\"3\",\n\"79\",\n],\n[15,\"すいそ\",\n\"35783\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>九段</font>\",\n\"1010\",\n\"7\",\n\"37\",\n\"5\",\n\"2\",\n\"1\",\n\"93\",\n],\n[16,\"SHITA\",\n\"18513\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>五段</font>\",\n\"995\",\n\"0\",\n\"41\",\n\"8\",\n\"19\",\n\"16\",\n\"61\",\n],\n[17,\"Dr.END\",\n\"54192\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"960\",\n\"5\",\n\"36\",\n\"9\",\n\"0\",\n\"9\",\n\"86\",\n],\n[18,\"masa\",\n\"41353\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"905\",\n\"1\",\n\"40\",\n\"3\",\n\"9\",\n\"4\",\n\"88\",\n],\n[19,\"ゆーすけ\",\n\"52943\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"880\",\n\"1\",\n\"39\",\n\"7\",\n\"0\",\n\"7\",\n\"91\",\n],\n[20,\"REKO-J\",\n\"32905\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"845\",\n\"5\",\n\"34\",\n\"0\",\n\"3\",\n\"3\",\n\"100\",\n],\n[21,\"風見 幽香\",\n\"2360\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>七段</font>\",\n\"840\",\n\"0\",\n\"27\",\n\"21\",\n\"18\",\n\"12\",\n\"67\",\n],\n[22,\"rausumaru\",\n\"56597\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>三級</font>\",\n\"825\",\n\"5\",\n\"22\",\n\"15\",\n\"17\",\n\"25\",\n\"61\",\n],\n[23,\"rick\",\n\"32452\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"820\",\n\"0\",\n\"29\",\n\"3\",\n\"42\",\n\"9\",\n\"62\",\n],\n[24,\"ムギ五級\",\n\"27026\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"805\",\n\"11\",\n\"20\",\n\"7\",\n\"1\",\n\"2\",\n\"104\",\n],\n[25,\"NYAN*2\",\n\"56036\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>一級</font>\",\n\"790\",\n\"6\",\n\"17\",\n\"27\",\n\"0\",\n\"11\",\n\"84\",\n],\n[26,\"MOK2\",\n\"7505\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"790\",\n\"3\",\n\"29\",\n\"9\",\n\"6\",\n\"1\",\n\"97\",\n],\n[27,\"mito\",\n\"17096\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"785\",\n\"1\",\n\"34\",\n\"7\",\n\"1\",\n\"0\",\n\"102\",\n],\n[28,\"どじぎみ\",\n\"6924\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"780\",\n\"2\",\n\"28\",\n\"12\",\n\"8\",\n\"14\",\n\"81\",\n],\n[29,\"yuu\",\n\"1038\",\n\"<font color='red'>五級</font>\",\n\"<font color='blue'>一級</font>\",\n\"765\",\n\"5\",\n\"20\",\n\"21\",\n\"1\",\n\"12\",\n\"86\",\n],\n[30,\"乙津 夢\",\n\"3927\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"705\",\n\"0\",\n\"30\",\n\"10\",\n\"1\",\n\"7\",\n\"97\",\n],\n[31,\"NAOKI\",\n\"53642\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"695\",\n\"1\",\n\"31\",\n\"4\",\n\"1\",\n\"0\",\n\"108\",\n],\n[32,\"LIEF\",\n\"46732\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"690\",\n\"5\",\n\"27\",\n\"0\",\n\"0\",\n\"4\",\n\"109\",\n],\n[33,\"BSR\",\n\"3719\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"670\",\n\"2\",\n\"28\",\n\"4\",\n\"2\",\n\"2\",\n\"107\",\n],\n[34,\"ARUSU\",\n\"7077\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"655\",\n\"3\",\n\"27\",\n\"1\",\n\"3\",\n\"0\",\n\"111\",\n],\n[35,\"nekoze\",\n\"51906\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>三級</font>\",\n\"635\",\n\"1\",\n\"20\",\n\"16\",\n\"9\",\n\"13\",\n\"86\",\n],\n[36,\"みっと\",\n\"61555\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"630\",\n\"2\",\n\"26\",\n\"0\",\n\"10\",\n\"16\",\n\"91\",\n],\n[37,\"さめす\",\n\"19903\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"610\",\n\"2\",\n\"27\",\n\"1\",\n\"0\",\n\"2\",\n\"113\",\n],\n[38,\"lele\",\n\"18838\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>四段</font>\",\n\"580\",\n\"0\",\n\"22\",\n\"9\",\n\"10\",\n\"6\",\n\"98\",\n],\n[39,\"隠居\",\n\"23712\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"570\",\n\"0\",\n\"18\",\n\"17\",\n\"8\",\n\"4\",\n\"98\",\n],\n[40,\"ベニヤ板尾\",\n\"66124\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"560\",\n\"5\",\n\"19\",\n\"3\",\n\"0\",\n\"5\",\n\"113\",\n],\n[41,\"えらる\",\n\"26263\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"545\",\n\"5\",\n\"15\",\n\"7\",\n\"5\",\n\"16\",\n\"97\",\n],\n[42,\"MOYAP\",\n\"55457\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>二段</font>\",\n\"545\",\n\"4\",\n\"14\",\n\"14\",\n\"1\",\n\"5\",\n\"107\",\n],\n[43,\"NOTE\",\n\"49600\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>四級</font>\",\n\"535\",\n\"1\",\n\"16\",\n\"13\",\n\"11\",\n\"9\",\n\"95\",\n],\n[44,\"長月OTG\",\n\"65604\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"530\",\n\"1\",\n\"24\",\n\"0\",\n\"4\",\n\"5\",\n\"111\",\n],\n[45,\"izayoi\",\n\"23909\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"525\",\n\"5\",\n\"0\",\n\"37\",\n\"1\",\n\"0\",\n\"102\",\n],\n[46,\"jin_r\",\n\"70202\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>五段</font>\",\n\"520\",\n\"0\",\n\"25\",\n\"1\",\n\"2\",\n\"0\",\n\"117\",\n],\n[47,\"噂のぼく\",\n\"70065\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>五級</font>\",\n\"495\",\n\"1\",\n\"19\",\n\"8\",\n\"1\",\n\"10\",\n\"106\",\n],\n[48,\"happy\",\n\"58388\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"490\",\n\"2\",\n\"21\",\n\"1\",\n\"0\",\n\"15\",\n\"106\",\n],\n[49,\"朝倉音姫\",\n\"46295\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"480\",\n\"3\",\n\"19\",\n\"0\",\n\"2\",\n\"9\",\n\"112\",\n],\n[50,\"ROCHE.\",\n\"18413\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"475\",\n\"0\",\n\"20\",\n\"1\",\n\"13\",\n\"12\",\n\"99\",\n],\n[51,\"Note\",\n\"57177\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"465\",\n\"0\",\n\"19\",\n\"8\",\n\"1\",\n\"1\",\n\"116\",\n],\n[52,\"yassan\",\n\"26676\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"450\",\n\"0\",\n\"20\",\n\"5\",\n\"0\",\n\"16\",\n\"104\",\n],\n[53,\"HOI2\",\n\"7850\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"450\",\n\"0\",\n\"16\",\n\"11\",\n\"4\",\n\"8\",\n\"106\",\n],\n[54,\"YUNKEL\",\n\"26381\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"440\",\n\"0\",\n\"16\",\n\"9\",\n\"6\",\n\"4\",\n\"110\",\n],\n[55,\"objeCraft\",\n\"1141\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"435\",\n\"1\",\n\"17\",\n\"4\",\n\"5\",\n\"18\",\n\"100\",\n],\n[56,\"eephus\",\n\"56919\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"430\",\n\"1\",\n\"19\",\n\"2\",\n\"0\",\n\"5\",\n\"118\",\n],\n[57,\"玄米\",\n\"43166\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"430\",\n\"0\",\n\"20\",\n\"3\",\n\"0\",\n\"5\",\n\"117\",\n],\n[58,\"ROMA\",\n\"6889\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"425\",\n\"0\",\n\"18\",\n\"2\",\n\"9\",\n\"5\",\n\"111\",\n],\n[59,\"dove-cs\",\n\"46149\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"420\",\n\"0\",\n\"21\",\n\"0\",\n\"0\",\n\"7\",\n\"117\",\n],\n[60,\"わふわふ\",\n\"45450\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>二段</font>\",\n\"420\",\n\"0\",\n\"17\",\n\"0\",\n\"16\",\n\"4\",\n\"108\",\n],\n[61,\"やく丸\",\n\"27473\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"395\",\n\"3\",\n\"12\",\n\"3\",\n\"7\",\n\"8\",\n\"112\",\n],\n[62,\"DZT\",\n\"32328\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"390\",\n\"0\",\n\"14\",\n\"9\",\n\"4\",\n\"14\",\n\"104\",\n],\n[63,\"IROHA\",\n\"20432\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"380\",\n\"0\",\n\"15\",\n\"8\",\n\"0\",\n\"18\",\n\"104\",\n],\n[64,\"美玲☆\",\n\"55426\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"375\",\n\"2\",\n\"12\",\n\"1\",\n\"13\",\n\"22\",\n\"95\",\n],\n[65,\"ぼす\",\n\"24938\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"375\",\n\"0\",\n\"7\",\n\"13\",\n\"21\",\n\"26\",\n\"78\",\n],\n[66,\"HUGO\",\n\"25698\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"360\",\n\"3\",\n\"4\",\n\"15\",\n\"8\",\n\"14\",\n\"101\",\n],\n[67,\"EAME.\",\n\"46317\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"355\",\n\"0\",\n\"13\",\n\"2\",\n\"15\",\n\"5\",\n\"110\",\n],\n[68,\"yut_zero\",\n\"8724\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"350\",\n\"1\",\n\"16\",\n\"0\",\n\"0\",\n\"9\",\n\"119\",\n],\n[69,\"nt_chan\",\n\"417\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"350\",\n\"1\",\n\"14\",\n\"3\",\n\"2\",\n\"2\",\n\"123\",\n],\n[70,\"reki\",\n\"39644\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"345\",\n\"1\",\n\"9\",\n\"5\",\n\"17\",\n\"11\",\n\"102\",\n],\n[71,\"もけた\",\n\"39845\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"340\",\n\"2\",\n\"14\",\n\"0\",\n\"0\",\n\"6\",\n\"123\",\n],\n[72,\"くそざこ\",\n\"18592\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"340\",\n\"0\",\n\"15\",\n\"0\",\n\"8\",\n\"4\",\n\"118\",\n],\n[73,\"大で部！\",\n\"312\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"340\",\n\"0\",\n\"13\",\n\"3\",\n\"10\",\n\"5\",\n\"114\",\n],\n[74,\"RAIZE\",\n\"33235\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>七級</font>\",\n\"340\",\n\"0\",\n\"6\",\n\"4\",\n\"36\",\n\"21\",\n\"78\",\n],\n[75,\"ZMKRP\",\n\"26935\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"335\",\n\"0\",\n\"16\",\n\"0\",\n\"3\",\n\"4\",\n\"122\",\n],\n[76,\"●superdry\",\n\"12588\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"330\",\n\"2\",\n\"13\",\n\"0\",\n\"2\",\n\"0\",\n\"128\",\n],\n[77,\"プルート卿\",\n\"7344\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"330\",\n\"1\",\n\"6\",\n\"3\",\n\"30\",\n\"12\",\n\"93\",\n],\n[78,\"auric\",\n\"66471\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"330\",\n\"1\",\n\"0\",\n\"30\",\n\"0\",\n\"17\",\n\"97\",\n],\n[79,\"みこと\",\n\"56549\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"330\",\n\"0\",\n\"14\",\n\"2\",\n\"6\",\n\"5\",\n\"118\",\n],\n[80,\"NPC\",\n\"50250\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"330\",\n\"0\",\n\"10\",\n\"9\",\n\"8\",\n\"4\",\n\"114\",\n],\n[81,\"YUK\",\n\"47592\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"320\",\n\"0\",\n\"15\",\n\"2\",\n\"0\",\n\"1\",\n\"127\",\n],\n[82,\"はるしぃ\",\n\"34815\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>三段</font>\",\n\"320\",\n\"0\",\n\"12\",\n\"2\",\n\"12\",\n\"6\",\n\"113\",\n],\n[83,\"HEALIN\",\n\"53446\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"315\",\n\"0\",\n\"7\",\n\"16\",\n\"3\",\n\"14\",\n\"105\",\n],\n[84,\"GAT\",\n\"59280\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>二級</font>\",\n\"315\",\n\"0\",\n\"4\",\n\"14\",\n\"19\",\n\"12\",\n\"96\",\n],\n[85,\"YUKARI\",\n\"2914\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"310\",\n\"1\",\n\"14\",\n\"0\",\n\"0\",\n\"2\",\n\"128\",\n],\n[86,\"鳥居寺小雨\",\n\"51551\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"310\",\n\"0\",\n\"12\",\n\"6\",\n\"2\",\n\"8\",\n\"117\",\n],\n[87,\"OTL\",\n\"25827\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"305\",\n\"0\",\n\"10\",\n\"9\",\n\"3\",\n\"10\",\n\"113\",\n],\n[88,\"sekky\",\n\"37929\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"300\",\n\"0\",\n\"15\",\n\"0\",\n\"0\",\n\"10\",\n\"120\",\n],\n[89,\"??\",\n\"7938\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"295\",\n\"0\",\n\"14\",\n\"1\",\n\"1\",\n\"3\",\n\"126\",\n],\n[90,\"-SALT-\",\n\"30476\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"295\",\n\"0\",\n\"11\",\n\"4\",\n\"7\",\n\"3\",\n\"120\",\n],\n[91,\"pen4r\",\n\"37515\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"295\",\n\"0\",\n\"11\",\n\"2\",\n\"11\",\n\"10\",\n\"111\",\n],\n[92,\"ippi@\",\n\"14514\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"290\",\n\"4\",\n\"7\",\n\"3\",\n\"0\",\n\"1\",\n\"130\",\n],\n[93,\"L.SMK@DAO\",\n\"9392\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>初段</font>\",\n\"285\",\n\"2\",\n\"9\",\n\"1\",\n\"7\",\n\"0\",\n\"126\",\n],\n[94,\"伊159753\",\n\"2870\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"285\",\n\"1\",\n\"11\",\n\"3\",\n\"1\",\n\"9\",\n\"120\",\n],\n[95,\"ザンビ〜\",\n\"11756\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"285\",\n\"1\",\n\"10\",\n\"5\",\n\"1\",\n\"11\",\n\"117\",\n],\n[96,\"Cream P.P.\",\n\"33712\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"285\",\n\"0\",\n\"12\",\n\"1\",\n\"7\",\n\"4\",\n\"121\",\n],\n[97,\"おっくん\",\n\"30336\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"285\",\n\"0\",\n\"11\",\n\"2\",\n\"9\",\n\"18\",\n\"105\",\n],\n[98,\"yukitani\",\n\"168\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"280\",\n\"3\",\n\"9\",\n\"1\",\n\"0\",\n\"1\",\n\"131\",\n],\n[99,\"kiritori\",\n\"13962\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"280\",\n\"0\",\n\"14\",\n\"0\",\n\"0\",\n\"14\",\n\"117\",\n],\n[100,\"西沢歩\",\n\"1568\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"275\",\n\"0\",\n\"12\",\n\"3\",\n\"1\",\n\"5\",\n\"124\",\n],\n[101,\"5*LEAF\",\n\"36977\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"275\",\n\"0\",\n\"11\",\n\"4\",\n\"3\",\n\"3\",\n\"124\",\n],\n[102,\"silvergest\",\n\"44067\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>初段</font>\",\n\"270\",\n\"2\",\n\"8\",\n\"5\",\n\"0\",\n\"6\",\n\"124\",\n],\n[103,\"KCOOL\",\n\"70074\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"270\",\n\"0\",\n\"3\",\n\"21\",\n\"0\",\n\"13\",\n\"108\",\n],\n[104,\"クマの人\",\n\"10901\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"265\",\n\"0\",\n\"12\",\n\"1\",\n\"3\",\n\"3\",\n\"126\",\n],\n[105,\"tezevo\",\n\"12348\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>初段</font>\",\n\"260\",\n\"1\",\n\"6\",\n\"9\",\n\"4\",\n\"3\",\n\"122\",\n],\n[106,\"ありせ\",\n\"67614\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"260\",\n\"0\",\n\"10\",\n\"0\",\n\"12\",\n\"10\",\n\"113\",\n],\n[107,\"なぎどす\",\n\"5074\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"255\",\n\"0\",\n\"12\",\n\"1\",\n\"1\",\n\"4\",\n\"127\",\n],\n[108,\"電\",\n\"36407\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"255\",\n\"0\",\n\"11\",\n\"0\",\n\"7\",\n\"6\",\n\"121\",\n],\n[109,\"kireji\",\n\"1569\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"250\",\n\"3\",\n\"6\",\n\"4\",\n\"0\",\n\"0\",\n\"132\",\n],\n[110,\"ぜにがめ\",\n\"39727\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>初段</font>\",\n\"250\",\n\"1\",\n\"10\",\n\"0\",\n\"4\",\n\"0\",\n\"130\",\n],\n[111,\"じょかとん\",\n\"24658\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>三級</font>\",\n\"250\",\n\"1\",\n\"5\",\n\"7\",\n\"10\",\n\"6\",\n\"116\",\n],\n[112,\"えむじぇー\",\n\"7752\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"250\",\n\"0\",\n\"11\",\n\"0\",\n\"6\",\n\"4\",\n\"124\",\n],\n[113,\"わさび\",\n\"41563\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"250\",\n\"0\",\n\"9\",\n\"7\",\n\"0\",\n\"4\",\n\"125\",\n],\n[114,\"ﾊﾞﾎﾞｰﾝ\",\n\"18734\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"250\",\n\"0\",\n\"9\",\n\"3\",\n\"8\",\n\"5\",\n\"120\",\n],\n[115,\"Neun_jack\",\n\"11452\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"245\",\n\"0\",\n\"9\",\n\"3\",\n\"7\",\n\"8\",\n\"118\",\n],\n[116,\"NightParty\",\n\"30037\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"240\",\n\"2\",\n\"7\",\n\"0\",\n\"8\",\n\"9\",\n\"119\",\n],\n[117,\"まちゃ\",\n\"47937\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"240\",\n\"1\",\n\"8\",\n\"4\",\n\"2\",\n\"3\",\n\"127\",\n],\n[118,\"fukyou\",\n\"33558\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"240\",\n\"1\",\n\"8\",\n\"3\",\n\"4\",\n\"6\",\n\"123\",\n],\n[119,\"LUMI27\",\n\"41256\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>五級</font>\",\n\"240\",\n\"1\",\n\"6\",\n\"0\",\n\"18\",\n\"47\",\n\"73\",\n],\n[120,\"Losty\",\n\"2158\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"240\",\n\"0\",\n\"12\",\n\"0\",\n\"0\",\n\"4\",\n\"129\",\n],\n[121,\"はむ。\",\n\"38219\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"240\",\n\"0\",\n\"11\",\n\"0\",\n\"4\",\n\"6\",\n\"124\",\n],\n[122,\"きょん\",\n\"62856\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"240\",\n\"0\",\n\"10\",\n\"0\",\n\"8\",\n\"3\",\n\"124\",\n],\n[123,\"Moma\",\n\"38028\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"240\",\n\"0\",\n\"8\",\n\"4\",\n\"8\",\n\"14\",\n\"111\",\n],\n[124,\"ぜっくす\",\n\"60095\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"235\",\n\"0\",\n\"9\",\n\"0\",\n\"11\",\n\"20\",\n\"105\",\n],\n[125,\"LiA\",\n\"33949\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"235\",\n\"0\",\n\"4\",\n\"14\",\n\"3\",\n\"9\",\n\"115\",\n],\n[126,\"栗悟飯\",\n\"17803\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"230\",\n\"1\",\n\"8\",\n\"4\",\n\"0\",\n\"1\",\n\"131\",\n],\n[127,\"山梨\",\n\"42258\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"230\",\n\"0\",\n\"11\",\n\"1\",\n\"0\",\n\"6\",\n\"127\",\n],\n[128,\"omochi\",\n\"20898\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"230\",\n\"0\",\n\"10\",\n\"2\",\n\"2\",\n\"6\",\n\"125\",\n],\n[129,\"おじさん\",\n\"30201\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"230\",\n\"0\",\n\"8\",\n\"7\",\n\"0\",\n\"8\",\n\"122\",\n],\n[130,\"kurikuma\",\n\"54099\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"230\",\n\"0\",\n\"8\",\n\"3\",\n\"8\",\n\"9\",\n\"117\",\n],\n[131,\"meto\",\n\"21580\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"230\",\n\"0\",\n\"3\",\n\"9\",\n\"16\",\n\"8\",\n\"109\",\n],\n[132,\"クルル\",\n\"2645\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"225\",\n\"3\",\n\"6\",\n\"1\",\n\"1\",\n\"1\",\n\"133\",\n],\n[133,\"まめ\",\n\"16232\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"225\",\n\"2\",\n\"7\",\n\"1\",\n\"3\",\n\"2\",\n\"130\",\n],\n[134,\"Fan\",\n\"57760\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"225\",\n\"1\",\n\"5\",\n\"6\",\n\"7\",\n\"8\",\n\"118\",\n],\n[135,\"*暁*\",\n\"40621\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"225\",\n\"0\",\n\"5\",\n\"12\",\n\"1\",\n\"5\",\n\"122\",\n],\n[136,\"ひのみや\",\n\"29012\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"220\",\n\"2\",\n\"8\",\n\"0\",\n\"0\",\n\"8\",\n\"127\",\n],\n[137,\"50U531\",\n\"1407\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"220\",\n\"0\",\n\"7\",\n\"7\",\n\"2\",\n\"4\",\n\"125\",\n],\n[138,\"ねめしす\",\n\"16977\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"220\",\n\"0\",\n\"6\",\n\"10\",\n\"0\",\n\"14\",\n\"115\",\n],\n[139,\"山形まり花\",\n\"31012\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"215\",\n\"1\",\n\"8\",\n\"0\",\n\"5\",\n\"8\",\n\"123\",\n],\n[140,\"P.\",\n\"19677\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"215\",\n\"0\",\n\"10\",\n\"1\",\n\"1\",\n\"1\",\n\"132\",\n],\n[141,\"でるたま\",\n\"16610\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"210\",\n\"1\",\n\"9\",\n\"0\",\n\"0\",\n\"1\",\n\"134\",\n],\n[142,\"WEX-SORA\",\n\"23316\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"210\",\n\"1\",\n\"6\",\n\"0\",\n\"12\",\n\"3\",\n\"123\",\n],\n[143,\"sis.a\",\n\"28792\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"210\",\n\"0\",\n\"10\",\n\"1\",\n\"0\",\n\"1\",\n\"133\",\n],\n[144,\"めぅ\",\n\"63418\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"210\",\n\"0\",\n\"10\",\n\"0\",\n\"2\",\n\"3\",\n\"130\",\n],\n[145,\"歳納 京子\",\n\"18\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"205\",\n\"2\",\n\"5\",\n\"4\",\n\"1\",\n\"3\",\n\"130\",\n],\n[146,\"はる\",\n\"39995\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"205\",\n\"0\",\n\"9\",\n\"2\",\n\"1\",\n\"18\",\n\"115\",\n],\n[147,\"おっぱさん\",\n\"32426\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"200\",\n\"0\",\n\"10\",\n\"0\",\n\"0\",\n\"7\",\n\"128\",\n],\n[148,\"ARKA\",\n\"59195\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>初段</font>\",\n\"200\",\n\"0\",\n\"10\",\n\"0\",\n\"0\",\n\"7\",\n\"128\",\n],\n[149,\"sanwari\",\n\"32212\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"200\",\n\"0\",\n\"8\",\n\"1\",\n\"6\",\n\"3\",\n\"127\",\n],\n[150,\"rem\",\n\"51459\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"200\",\n\"0\",\n\"7\",\n\"2\",\n\"8\",\n\"0\",\n\"128\",\n],\n[151,\"gura\",\n\"6639\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"195\",\n\"0\",\n\"8\",\n\"3\",\n\"1\",\n\"2\",\n\"131\",\n],\n[152,\"SHAKE\",\n\"20007\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"195\",\n\"0\",\n\"8\",\n\"1\",\n\"5\",\n\"8\",\n\"123\",\n],\n[153,\"にわとり\",\n\"6822\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"190\",\n\"1\",\n\"5\",\n\"6\",\n\"0\",\n\"12\",\n\"121\",\n],\n[154,\"AUZEN\",\n\"14951\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"190\",\n\"0\",\n\"8\",\n\"3\",\n\"0\",\n\"8\",\n\"126\",\n],\n[155,\"PG\",\n\"27035\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"190\",\n\"0\",\n\"8\",\n\"1\",\n\"4\",\n\"3\",\n\"129\",\n],\n[156,\"L.Stanley\",\n\"14594\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"185\",\n\"2\",\n\"6\",\n\"0\",\n\"1\",\n\"6\",\n\"130\",\n],\n[157,\"御庭つみき\",\n\"37368\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"185\",\n\"0\",\n\"9\",\n\"0\",\n\"1\",\n\"7\",\n\"128\",\n],\n[158,\"H.Eagle\",\n\"24724\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"185\",\n\"0\",\n\"7\",\n\"3\",\n\"3\",\n\"15\",\n\"117\",\n],\n[159,\"はぐりん\",\n\"24733\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"185\",\n\"0\",\n\"7\",\n\"3\",\n\"3\",\n\"5\",\n\"127\",\n],\n[160,\"Ellie\",\n\"74204\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>二級</font>\",\n\"185\",\n\"0\",\n\"2\",\n\"1\",\n\"27\",\n\"12\",\n\"103\",\n],\n[161,\"ｽｳｨｰﾃｨｰﾍﾞﾙ\",\n\"19765\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"180\",\n\"3\",\n\"4\",\n\"1\",\n\"0\",\n\"0\",\n\"137\",\n],\n[162,\"ヒプノック\",\n\"888\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"180\",\n\"2\",\n\"5\",\n\"2\",\n\"0\",\n\"1\",\n\"135\",\n],\n[163,\"ぱむってる\",\n\"41978\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"180\",\n\"2\",\n\"3\",\n\"0\",\n\"12\",\n\"9\",\n\"119\",\n],\n[164,\"ワト\",\n\"76598\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>七級</font>\",\n\"180\",\n\"1\",\n\"7\",\n\"1\",\n\"0\",\n\"2\",\n\"134\",\n],\n[165,\"wara0810\",\n\"51701\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"180\",\n\"0\",\n\"9\",\n\"0\",\n\"0\",\n\"2\",\n\"134\",\n],\n[166,\"じぇいつ\",\n\"24360\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"180\",\n\"0\",\n\"9\",\n\"0\",\n\"0\",\n\"1\",\n\"135\",\n],\n[167,\"BAA\",\n\"46116\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"180\",\n\"0\",\n\"8\",\n\"2\",\n\"0\",\n\"0\",\n\"135\",\n],\n[168,\"be5moti\",\n\"33542\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"180\",\n\"0\",\n\"8\",\n\"1\",\n\"2\",\n\"13\",\n\"121\",\n],\n[169,\"伊401\",\n\"38292\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"175\",\n\"1\",\n\"7\",\n\"0\",\n\"1\",\n\"9\",\n\"127\",\n],\n[170,\"じょーくん\",\n\"20439\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"175\",\n\"1\",\n\"7\",\n\"0\",\n\"1\",\n\"1\",\n\"135\",\n],\n[171,\"543\",\n\"64980\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"175\",\n\"1\",\n\"7\",\n\"0\",\n\"1\",\n\"0\",\n\"136\",\n],\n[172,\"引退BMS\",\n\"5281\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"175\",\n\"0\",\n\"6\",\n\"4\",\n\"3\",\n\"10\",\n\"122\",\n],\n[173,\"水橋なぐさ\",\n\"61832\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"175\",\n\"0\",\n\"6\",\n\"3\",\n\"5\",\n\"12\",\n\"119\",\n],\n[174,\"miro\",\n\"18150\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"170\",\n\"3\",\n\"0\",\n\"8\",\n\"0\",\n\"0\",\n\"134\",\n],\n[175,\"krg\",\n\"53934\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"170\",\n\"1\",\n\"5\",\n\"2\",\n\"4\",\n\"9\",\n\"124\",\n],\n[176,\"YY_komgc\",\n\"10284\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"170\",\n\"0\",\n\"7\",\n\"2\",\n\"2\",\n\"2\",\n\"132\",\n],\n[177,\"IKAROS\",\n\"53777\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"170\",\n\"0\",\n\"7\",\n\"0\",\n\"6\",\n\"4\",\n\"128\",\n],\n[178,\"のれぽん\",\n\"41092\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"170\",\n\"0\",\n\"6\",\n\"4\",\n\"2\",\n\"4\",\n\"129\",\n],\n[179,\"perseus\",\n\"48816\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"170\",\n\"0\",\n\"5\",\n\"0\",\n\"14\",\n\"9\",\n\"117\",\n],\n[180,\"freesia\",\n\"54163\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>五級</font>\",\n\"170\",\n\"0\",\n\"4\",\n\"5\",\n\"8\",\n\"0\",\n\"128\",\n],\n[181,\"shadow♪\",\n\"50442\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"165\",\n\"0\",\n\"8\",\n\"0\",\n\"1\",\n\"5\",\n\"131\",\n],\n[182,\"すけほも氏\",\n\"58785\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"165\",\n\"0\",\n\"4\",\n\"0\",\n\"17\",\n\"10\",\n\"114\",\n],\n[183,\"瀬笈 葉\",\n\"34967\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"165\",\n\"0\",\n\"1\",\n\"11\",\n\"7\",\n\"14\",\n\"112\",\n],\n[184,\"らぐ\",\n\"3906\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"160\",\n\"2\",\n\"5\",\n\"0\",\n\"0\",\n\"0\",\n\"138\",\n],\n[185,\"dan\",\n\"53526\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"160\",\n\"1\",\n\"3\",\n\"0\",\n\"14\",\n\"11\",\n\"116\",\n],\n[186,\"febreze\",\n\"32099\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"160\",\n\"0\",\n\"8\",\n\"0\",\n\"0\",\n\"4\",\n\"133\",\n],\n[187,\"ETIA.\",\n\"1153\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"160\",\n\"0\",\n\"8\",\n\"0\",\n\"0\",\n\"0\",\n\"137\",\n],\n[188,\"EBI_ACCON\",\n\"11899\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"160\",\n\"0\",\n\"7\",\n\"2\",\n\"0\",\n\"2\",\n\"134\",\n],\n[189,\"CIRRUS\",\n\"13382\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"160\",\n\"0\",\n\"6\",\n\"4\",\n\"0\",\n\"9\",\n\"126\",\n],\n[190,\"*MASA*\",\n\"2838\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"160\",\n\"0\",\n\"5\",\n\"4\",\n\"4\",\n\"3\",\n\"129\",\n],\n[191,\"ﾇｩ\",\n\"6600\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"155\",\n\"0\",\n\"7\",\n\"1\",\n\"1\",\n\"1\",\n\"135\",\n],\n[192,\"カメハメ波\",\n\"63\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"155\",\n\"0\",\n\"6\",\n\"3\",\n\"1\",\n\"6\",\n\"129\",\n],\n[193,\"ひな15\",\n\"27298\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"155\",\n\"0\",\n\"5\",\n\"1\",\n\"9\",\n\"4\",\n\"126\",\n],\n[194,\"がいうす\",\n\"63106\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"155\",\n\"0\",\n\"3\",\n\"7\",\n\"5\",\n\"3\",\n\"127\",\n],\n[195,\"ABO\",\n\"17704\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"155\",\n\"0\",\n\"2\",\n\"11\",\n\"1\",\n\"23\",\n\"108\",\n],\n[196,\"エム爺\",\n\"27\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"2\",\n\"4\",\n\"1\",\n\"0\",\n\"7\",\n\"131\",\n],\n[197,\"spot\",\n\"45103\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"1\",\n\"6\",\n\"0\",\n\"0\",\n\"5\",\n\"133\",\n],\n[198,\"USRM\",\n\"41589\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"1\",\n\"6\",\n\"0\",\n\"0\",\n\"2\",\n\"136\",\n],\n[199,\"blonk\",\n\"10547\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"1\",\n\"4\",\n\"4\",\n\"0\",\n\"0\",\n\"136\",\n],\n[200,\"ggg\",\n\"53042\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"1\",\n\"4\",\n\"2\",\n\"4\",\n\"11\",\n\"123\",\n],\n[201,\"銀糸\",\n\"29621\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"0\",\n\"7\",\n\"1\",\n\"0\",\n\"11\",\n\"126\",\n],\n[202,\"百舌谷\",\n\"6104\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"0\",\n\"7\",\n\"0\",\n\"2\",\n\"2\",\n\"134\",\n],\n[203,\"まつんれあ\",\n\"41114\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"0\",\n\"7\",\n\"0\",\n\"2\",\n\"1\",\n\"135\",\n],\n[204,\"Fade\",\n\"28431\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"0\",\n\"6\",\n\"3\",\n\"0\",\n\"4\",\n\"132\",\n],\n[205,\"落雁\",\n\"14263\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"0\",\n\"6\",\n\"0\",\n\"6\",\n\"20\",\n\"113\",\n],\n[206,\"oreo\",\n\"28494\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"0\",\n\"5\",\n\"2\",\n\"6\",\n\"7\",\n\"125\",\n],\n[207,\"ぷる酢\",\n\"38723\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"150\",\n\"0\",\n\"4\",\n\"5\",\n\"4\",\n\"8\",\n\"124\",\n],\n[208,\"J2\",\n\"31202\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"145\",\n\"2\",\n\"4\",\n\"0\",\n\"1\",\n\"6\",\n\"132\",\n],\n[209,\"えいち\",\n\"395\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"145\",\n\"0\",\n\"7\",\n\"0\",\n\"1\",\n\"5\",\n\"132\",\n],\n[210,\"仙人掌の人\",\n\"2147\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"145\",\n\"0\",\n\"6\",\n\"2\",\n\"1\",\n\"2\",\n\"134\",\n],\n[211,\"もりたぽ★\",\n\"29799\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"145\",\n\"0\",\n\"6\",\n\"2\",\n\"1\",\n\"1\",\n\"135\",\n],\n[212,\"asb\",\n\"42474\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"145\",\n\"0\",\n\"6\",\n\"1\",\n\"3\",\n\"3\",\n\"132\",\n],\n[213,\"ST-I\",\n\"41433\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"145\",\n\"0\",\n\"5\",\n\"2\",\n\"5\",\n\"3\",\n\"130\",\n],\n[214,\"shuny\",\n\"28400\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"140\",\n\"2\",\n\"4\",\n\"0\",\n\"0\",\n\"0\",\n\"139\",\n],\n[215,\"j.pami\",\n\"114\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"140\",\n\"2\",\n\"0\",\n\"8\",\n\"0\",\n\"8\",\n\"127\",\n],\n[216,\"fitbs...\",\n\"30526\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"140\",\n\"0\",\n\"7\",\n\"0\",\n\"0\",\n\"1\",\n\"137\",\n],\n[217,\"初音ミク\",\n\"3959\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"140\",\n\"0\",\n\"6\",\n\"2\",\n\"0\",\n\"1\",\n\"136\",\n],\n[218,\"たいぞー\",\n\"27509\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"140\",\n\"0\",\n\"6\",\n\"1\",\n\"2\",\n\"5\",\n\"131\",\n],\n[219,\"GAMAS\",\n\"755\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"140\",\n\"0\",\n\"5\",\n\"1\",\n\"6\",\n\"7\",\n\"126\",\n],\n[220,\"SASA\",\n\"56134\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"140\",\n\"0\",\n\"3\",\n\"4\",\n\"8\",\n\"17\",\n\"113\",\n],\n[221,\"ABC.\",\n\"27083\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"135\",\n\"1\",\n\"4\",\n\"2\",\n\"1\",\n\"7\",\n\"130\",\n],\n[222,\"suisei\",\n\"5657\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"135\",\n\"1\",\n\"4\",\n\"1\",\n\"3\",\n\"6\",\n\"130\",\n],\n[223,\"Yuk1_1206S\",\n\"9489\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"135\",\n\"0\",\n\"6\",\n\"1\",\n\"1\",\n\"5\",\n\"132\",\n],\n[224,\"MerLiN\",\n\"19995\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"135\",\n\"0\",\n\"6\",\n\"0\",\n\"3\",\n\"2\",\n\"134\",\n],\n[225,\"Ъφ32\",\n\"26842\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"135\",\n\"0\",\n\"6\",\n\"0\",\n\"3\",\n\"1\",\n\"135\",\n],\n[226,\"NO4N10\",\n\"440\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"135\",\n\"0\",\n\"4\",\n\"3\",\n\"5\",\n\"1\",\n\"132\",\n],\n[227,\"zi\",\n\"21296\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"2\",\n\"3\",\n\"1\",\n\"0\",\n\"2\",\n\"137\",\n],\n[228,\"紅茶犬\",\n\"170\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"1\",\n\"4\",\n\"2\",\n\"0\",\n\"2\",\n\"136\",\n],\n[229,\"SAUSU\",\n\"6178\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"1\",\n\"4\",\n\"1\",\n\"2\",\n\"9\",\n\"128\",\n],\n[230,\"いい靴@専\",\n\"72756\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"1\",\n\"3\",\n\"1\",\n\"6\",\n\"3\",\n\"131\",\n],\n[231,\"萬田\",\n\"28733\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"6\",\n\"1\",\n\"0\",\n\"0\",\n\"138\",\n],\n[232,\"みかも\",\n\"4812\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"6\",\n\"1\",\n\"0\",\n\"0\",\n\"138\",\n],\n[233,\"霧雨魔理沙\",\n\"42034\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>八段</font>\",\n\"130\",\n\"0\",\n\"5\",\n\"0\",\n\"6\",\n\"4\",\n\"130\",\n],\n[234,\"otyuu\",\n\"55807\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"5\",\n\"0\",\n\"6\",\n\"1\",\n\"133\",\n],\n[235,\"一条蛍\",\n\"28578\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"4\",\n\"4\",\n\"2\",\n\"6\",\n\"129\",\n],\n[236,\"AC-DR\",\n\"10674\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"4\",\n\"4\",\n\"2\",\n\"3\",\n\"132\",\n],\n[237,\"小野塚小町\",\n\"2627\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"4\",\n\"2\",\n\"6\",\n\"4\",\n\"129\",\n],\n[238,\"BBA\",\n\"28622\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"3\",\n\"4\",\n\"6\",\n\"19\",\n\"113\",\n],\n[239,\"DAIGO\",\n\"36987\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"3\",\n\"4\",\n\"6\",\n\"8\",\n\"124\",\n],\n[240,\"gongze\",\n\"43725\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"3\",\n\"2\",\n\"10\",\n\"3\",\n\"127\",\n],\n[241,\"きいち\",\n\"40392\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"130\",\n\"0\",\n\"1\",\n\"11\",\n\"0\",\n\"8\",\n\"125\",\n],\n[242,\"E-M-T-2→\",\n\"3001\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"125\",\n\"2\",\n\"3\",\n\"0\",\n\"1\",\n\"0\",\n\"139\",\n],\n[243,\"八雲 紫\",\n\"40908\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"125\",\n\"0\",\n\"5\",\n\"2\",\n\"1\",\n\"2\",\n\"135\",\n],\n[244,\"B-Force.\",\n\"38359\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>十段</font>\",\n\"125\",\n\"0\",\n\"4\",\n\"1\",\n\"7\",\n\"2\",\n\"131\",\n],\n[245,\"ベニヤ忍者\",\n\"27952\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"125\",\n\"0\",\n\"3\",\n\"3\",\n\"7\",\n\"5\",\n\"127\",\n],\n[246,\"KATINO\",\n\"39049\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"125\",\n\"0\",\n\"3\",\n\"1\",\n\"11\",\n\"2\",\n\"128\",\n],\n[247,\"kirias\",\n\"57299\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"125\",\n\"0\",\n\"0\",\n\"0\",\n\"25\",\n\"22\",\n\"98\",\n],\n[248,\"よーすく\",\n\"17117\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"1\",\n\"4\",\n\"1\",\n\"0\",\n\"1\",\n\"138\",\n],\n[249,\"higeDX\",\n\"3990\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"1\",\n\"4\",\n\"1\",\n\"0\",\n\"1\",\n\"138\",\n],\n[250,\"TRUEN◇\",\n\"11429\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"1\",\n\"3\",\n\"3\",\n\"0\",\n\"3\",\n\"135\",\n],\n[251,\"井之頭五郎\",\n\"263\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"1\",\n\"3\",\n\"2\",\n\"2\",\n\"0\",\n\"137\",\n],\n[252,\"ヌルチョル\",\n\"25188\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"6\",\n\"0\",\n\"0\",\n\"3\",\n\"136\",\n],\n[253,\"ene\",\n\"36908\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"6\",\n\"0\",\n\"0\",\n\"2\",\n\"137\",\n],\n[254,\"あずきや\",\n\"2871\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"6\",\n\"0\",\n\"0\",\n\"0\",\n\"139\",\n],\n[255,\"らいらっく\",\n\"14043\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"5\",\n\"2\",\n\"0\",\n\"4\",\n\"134\",\n],\n[256,\"豊聡耳神子\",\n\"26117\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"5\",\n\"1\",\n\"2\",\n\"0\",\n\"137\",\n],\n[257,\"KTBM\",\n\"39170\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"4\",\n\"4\",\n\"0\",\n\"1\",\n\"136\",\n],\n[258,\"mimitaso\",\n\"20938\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"4\",\n\"1\",\n\"6\",\n\"9\",\n\"125\",\n],\n[259,\"nnnna\",\n\"48107\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"3\",\n\"3\",\n\"6\",\n\"6\",\n\"127\",\n],\n[260,\"つみや\",\n\"1418\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"1\",\n\"10\",\n\"0\",\n\"5\",\n\"129\",\n],\n[261,\"topica\",\n\"64998\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"120\",\n\"0\",\n\"0\",\n\"12\",\n\"0\",\n\"4\",\n\"129\",\n],\n[262,\"AT-FB\",\n\"21484\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"1\",\n\"3\",\n\"2\",\n\"1\",\n\"1\",\n\"137\",\n],\n[263,\"H.Eagle-CS\",\n\"36823\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"1\",\n\"3\",\n\"1\",\n\"3\",\n\"12\",\n\"125\",\n],\n[264,\"ｲﾝﾃﾙ北島\",\n\"17006\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"1\",\n\"3\",\n\"1\",\n\"3\",\n\"10\",\n\"127\",\n],\n[265,\"INASH\",\n\"463\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"1\",\n\"2\",\n\"4\",\n\"1\",\n\"2\",\n\"135\",\n],\n[266,\"NTRX\",\n\"225\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"1\",\n\"0\",\n\"8\",\n\"1\",\n\"1\",\n\"134\",\n],\n[267,\"MOGMOG\",\n\"11185\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"0\",\n\"5\",\n\"1\",\n\"1\",\n\"4\",\n\"134\",\n],\n[268,\"Fohte\",\n\"46277\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"0\",\n\"5\",\n\"0\",\n\"3\",\n\"5\",\n\"132\",\n],\n[269,\"aliel\",\n\"37250\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"0\",\n\"4\",\n\"3\",\n\"1\",\n\"8\",\n\"129\",\n],\n[270,\"5643k\",\n\"55115\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"0\",\n\"2\",\n\"5\",\n\"5\",\n\"8\",\n\"125\",\n],\n[271,\"ぬーんさん\",\n\"46275\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"115\",\n\"0\",\n\"2\",\n\"2\",\n\"11\",\n\"5\",\n\"125\",\n],\n[272,\"Phorni\",\n\"31\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"2\",\n\"0\",\n\"5\",\n\"0\",\n\"2\",\n\"136\",\n],\n[273,\"muri\",\n\"1384\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"1\",\n\"4\",\n\"0\",\n\"0\",\n\"2\",\n\"138\",\n],\n[274,\"七瀬那乃\",\n\"39264\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"1\",\n\"4\",\n\"0\",\n\"0\",\n\"2\",\n\"138\",\n],\n[275,\"すずき\",\n\"16617\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"1\",\n\"4\",\n\"0\",\n\"0\",\n\"1\",\n\"139\",\n],\n[276,\"かぜっと\",\n\"8548\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"1\",\n\"4\",\n\"0\",\n\"0\",\n\"1\",\n\"139\",\n],\n[277,\"敏腕秘書\",\n\"21397\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"1\",\n\"4\",\n\"0\",\n\"0\",\n\"0\",\n\"140\",\n],\n[278,\"Ase\",\n\"48769\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"1\",\n\"4\",\n\"0\",\n\"0\",\n\"0\",\n\"140\",\n],\n[279,\"オヴニル\",\n\"873\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"1\",\n\"4\",\n\"0\",\n\"0\",\n\"0\",\n\"140\",\n],\n[280,\"marisa\",\n\"29727\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"0\",\n\"5\",\n\"1\",\n\"0\",\n\"13\",\n\"126\",\n],\n[281,\"darumax\",\n\"32603\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"0\",\n\"5\",\n\"1\",\n\"0\",\n\"6\",\n\"133\",\n],\n[282,\"ぞうさん\",\n\"32849\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"0\",\n\"5\",\n\"0\",\n\"2\",\n\"3\",\n\"135\",\n],\n[283,\"サラダ油\",\n\"25464\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"0\",\n\"4\",\n\"3\",\n\"0\",\n\"1\",\n\"137\",\n],\n[284,\"★ｴﾒﾗﾙﾄﾞ★\",\n\"42146\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"0\",\n\"4\",\n\"1\",\n\"4\",\n\"10\",\n\"126\",\n],\n[285,\"Bicky\",\n\"35346\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"0\",\n\"4\",\n\"1\",\n\"4\",\n\"2\",\n\"134\",\n],\n[286,\"こだぽよ\",\n\"37719\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"0\",\n\"3\",\n\"0\",\n\"10\",\n\"7\",\n\"125\",\n],\n[287,\"on\",\n\"20189\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"110\",\n\"0\",\n\"2\",\n\"7\",\n\"0\",\n\"0\",\n\"136\",\n],\n[288,\"7azl\",\n\"57839\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>七級</font>\",\n\"110\",\n\"0\",\n\"0\",\n\"8\",\n\"6\",\n\"13\",\n\"118\",\n],\n[289,\"cloud\",\n\"680\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"2\",\n\"2\",\n\"0\",\n\"1\",\n\"0\",\n\"140\",\n],\n[290,\"RiS.U\",\n\"24\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"1\",\n\"3\",\n\"1\",\n\"1\",\n\"1\",\n\"138\",\n],\n[291,\"たくあん♪\",\n\"7762\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"1\",\n\"3\",\n\"1\",\n\"1\",\n\"0\",\n\"139\",\n],\n[292,\"NAK.\",\n\"9168\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"5\",\n\"0\",\n\"1\",\n\"5\",\n\"134\",\n],\n[293,\"SITEN\",\n\"34370\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"5\",\n\"0\",\n\"1\",\n\"3\",\n\"136\",\n],\n[294,\"　\",\n\"49136\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"5\",\n\"0\",\n\"1\",\n\"3\",\n\"136\",\n],\n[295,\"C\",\n\"33219\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"5\",\n\"0\",\n\"1\",\n\"1\",\n\"138\",\n],\n[296,\"Master2230\",\n\"62553\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"5\",\n\"0\",\n\"1\",\n\"1\",\n\"138\",\n],\n[297,\"てんこ\",\n\"2140\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"5\",\n\"0\",\n\"1\",\n\"0\",\n\"139\",\n],\n[298,\"Alma\",\n\"999\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"4\",\n\"2\",\n\"1\",\n\"8\",\n\"130\",\n],\n[299,\"peace\",\n\"53202\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"4\",\n\"1\",\n\"3\",\n\"2\",\n\"135\",\n],\n[300,\"小太刀凪\",\n\"28842\",\n\"<font color='red'>-</font>\",\n\"<font color='blue'>-</font>\",\n\"105\",\n\"0\",\n\"4\",\n\"1\",\n\"3\",\n\"1\",\n\"136\",\n]];\n  document.write(\"<tbody>\\n\")\n  for (var i=0;i<mname.length;i++) {\n     document.write(\n     \"<tr class='tr_ng' id='#tr\"+mname[i][0]+\"' style='color:black;font-size:12px' height='14'>\"+\n     \"<td width='30' align='center'>\" + \"<font color='black'>\" + mname[i][0] + \"</font></td>\"+\n     \"<td width='150' align='center'><a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=mypage&playerid=\"+mname[i][2]+\"'>\" + mname[i][1] + \"</a></td>\"+\n     \"<td width='120' align='center'>\" + mname[i][3] + \"/\" + mname[i][4] + \"</td>\"+\n     \"<td width='70' align='center'>\" + \"<font color='black'>\" + mname[i][5] + \"</font></td>\"+\n     \"<td width='70' align='center'>\" + \"<font color='black'>\" + mname[i][6] + \"</font></td>\"+\n     \"<td width='60' align='center'>\" + \"<font color='black'>\" + mname[i][7] + \"</font></td>\"+\n     \"<td width='60' align='center'>\" + \"<font color='black'>\" + mname[i][8] + \"</font></td>\"+\n     \"<td width='70' align='center'>\" + \"<font color='black'>\" + mname[i][9] + \"</font></td>\"+\n     \"<td width='70' align='center'>\" + \"<font color='black'>\" + mname[i][10] + \"</font></td>\"+\n     \"<td width='70' align='center'>\" + \"<font color='black'>\" + mname[i][11] + \"</font></td>\"+\n     \"</tr>\\n\"\n     );\n\n  }\n  document.write(\"</tbody>\\n\")\n  document.write(\"</table>\\n\")\n  //-->\n  </script>\n  \n<script type=\"text/javascript\">\n   $(document).ready(function() \n       { \n           $(\"#table1\").tablesorter();\n       }\n   ); \n</script>\n<div align=\"center\" ><strong><a href=\"index.html\" target=\"_top\">戻る</a></strong></div>\n\n\n</html>",
+			"file": "/C/Users/mind-s/Documents/GitHub/HP_dev/bms_sara_ClearRanking.html",
+			"file_size": 46130,
+			"file_write_time": 130406488660394575,
+			"settings":
+			{
+				"buffer_size": 41877,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "MusicDataParser.hs",
+			"contents": "  document.write(\"<tbody>\\n\")\n  for (var i=0;i<mname.length;i++) {\n     document.write(\n     \"<tr class='tr_ng' id='#tr\"+mname[i][0]+\"' style='color:black;font-size:12px' height='14'>\"+\n     \"<td align='center'>\" + \"<font color='black'>\" + mname[i][0] + \"</font></td>\"+\n     \"<td align='center'>\"+ \"<font color='black'>\" + mname[i][1]+\"</font></td>\"+\n     \"<td width='350' align='center'><a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsid=\"+mname[i][3]+\"'>\" + mname[i][2] + \"</a></td>\"+\n     \"<td width='70' align='center'>\" + \"<font color='black'>\" + mname[i][4] + \"</font></td>\"+\n     \"<td width='70' align='center'>\" + \"<font color='black'>\" + mname[i][5] + \"</font></td>\"+\n     \"<td width='70' align='center'>\" + \"<font color='black'>\" + mname[i][6] + \"</font></td>\"+\n     \"<td width='60' align='center'>\" + \"<font color='black'>\" + mname[i][7] + \"</font></td>\"+\n     \"<td width='60' align='center'>\" + \"<font color='black'>\" + mname[i][8] + \"</font></td>\"+\n     \"<td width='60' align='center'>\" + \"<font color='black'>\" + mname[i][9] + \"</font></td>\"+\n     \"<td width='60' align='center'>\" + \"<font color='black'>\" + mname[i][10] + \"</font></td>\"+\n     \"<td width='60' align='center'>\" + \"<font color='black'>\" + mname[i][11] + \"</font></td>\"+\n     \"<td width='60' align='center'>\" + \"<font color='black'>\" + mname[i][12] + \"</font></td>\"+\n     \"</tr>\\n\"\n     );\n\n  }\n  document.write(\"</tbody>\\n\")\n  document.write(\"</table>\\n\")\n  //-->\n  </script>\n  \n<script type=\"text/javascript\">\n   $(document).ready(function() \n       { \n           $(\"#table1\").tablesorter();\n       }\n   ); \n</script>\n<div align=\"center\" ><strong><a href=\"index.html\" target=\"_top\">戻る</a></strong></div>\n    </div>\n    <script src=\"http://code.jquery.com/jquery.js\"></script>\n    <script src=\"bootstrap/js/bootstrap.min.js\"></script>\n  </body>\n</html>",
+			"file": "/C/Users/mind-s/Documents/GitHub/minddnimHP/bms_sara_ClearData/tableFooter.html",
+			"file_size": 1899,
+			"file_write_time": 130406486562934607,
 			"settings":
 			{
-				"buffer_size": 17856,
+				"buffer_size": 1860,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/C/Users/mind-s/Documents/GitHub/HP_dev/fo.html",
+			"settings":
+			{
+				"buffer_size": 2043,
 				"line_ending": "Windows"
 			}
 		}
@@ -235,9 +286,25 @@
 	"build_system": "Packages/Haskell/Haskell.sublime-build",
 	"command_palette":
 	{
-		"height": 104.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"haskell",
+				"Set Syntax: Haskell"
+			],
+			[
+				"syntax ru",
+				"Set Syntax: Ruby on Rails"
+			],
+			[
+				"synta c",
+				"Set Syntax: C++"
+			],
+			[
+				"synta ruby",
+				"Set Syntax: Ruby on Rails"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -245,10 +312,6 @@
 			[
 				"repl haskel",
 				"SublimeREPL: Haskell"
-			],
-			[
-				"haskell",
-				"Set Syntax: Haskell"
 			],
 			[
 				"Package Control: ",
@@ -290,27 +353,63 @@
 	},
 	"file_history":
 	[
+		"/C/Users/mind-s/Desktop/bootstrap/index13.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index10.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index14.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index15.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index11.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index12.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index8.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index9.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index6.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index7.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index5.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index4.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index3.html",
+		"/C/Users/mind-s/Desktop/bootstrap/index2.html",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_-1.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_0.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_1.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_2.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_4.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_3.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/MusicDataParser.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_easy.hs",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/ConvertALLSCR.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoData.hs",
+		"/C/Users/mind-s/Documents/GitHub/minddnimHP/bms_sara_SSPtRanking_total/bms_sara_SSPtRanking_total.html",
+		"/C/Users/mind-s/Desktop/lr2folder/createLR2Folder.hs",
+		"/C/Users/mind-s/Documents/GitHub/minddnimHP/CalcClearPoint/CalcClearPoint.html",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/BmsAnalysis.hs",
+		"/C/Users/mind-s/Desktop/bootstrap/index.html",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData.hs",
+		"/C/Users/mind-s/rails_projects/demo_app/Gemfile",
+		"/C/Users/mind-s/rails_projects/demo_app/app/models/user.rb",
+		"/C/Users/mind-s/rails_projects/demo_app/app/models/micropost.rb",
+		"/C/ruby/devkit/config.yml",
+		"/C/Users/mind-s/rails_projects/first_app/Gemfile",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_hard.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoSSPtData_normal.hs",
+		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromCourseToData.hs",
+		"/C/Users/mind-s/Desktop/deal.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoAllPlayerData.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoClearCount.hs",
-		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/MusicDataParser.hs",
+		"/C/Users/mind-s/rails_projects/first_app/README.md",
+		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/Bmsparser.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromDatatoHTML.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/CalcRankingPoint.hs",
 		"/C/Users/mind-s/Documents/GitHub/DesignPattern/TemplateMethod.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoAllPlayerData.bat",
-		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/BmsAnalysis.hs",
 		"/C/Users/mind-s/Desktop/bms_sara_ClearData/bms_sara_ClearData1.html",
 		"/C/Users/mind-s/Desktop/__jquery.tablesorter/themes/green/style1.css",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromBmsDatatoHTML.hs",
 		"/C/Users/mind-s/Desktop/__jquery.tablesorter/themes/green/style.css",
-		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/Bmsparser.hs",
 		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeHaskell/Settings/SublimeHaskell.sublime-settings",
 		"/C/Users/mind-s/AppData/Roaming/Sublime Text 3/Packages/SublimeHaskell/ModuleInspector.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR_SaraTableClearCount/Model/FromHPtoClearCount.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR_SaraTableClearCount/Model/MusicDataParser.hs",
-		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/ConvertALLSCR.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromBmsDatatoHTML_build.bat",
 		"/C/Users/mind-s/Desktop/bmsDataTable/bms_sara_data_clear.html",
-		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/FromHPtoData.hs",
 		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/bmsAnalysis.hs",
 		"/C/Users/mind-s/Documents/GitHub/LR2_Assistant/Model/Main.hs",
 		"/C/Users/mind-s/Documents/GitHub/tool/bmsAnalysis/    Not in scope",
@@ -340,7 +439,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -354,6 +453,64 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ScratchSkillPtRanking",
+			"++",
+			"String",
+			"defMusicSrc",
+			"formatMusicData",
+			"error",
+			"(DaniHard, DaniNormal, DaniEasy)",
+			"defVarMNameStr",
+			"dFCNT",
+			"convertDatas",
+			"ScratchSkillPtRanking",
+			"PlayerMusicDataInfo",
+			"getDaniOfPlayer",
+			"ScratchSkillPtRanking",
+			"daniDatas",
+			"ScratchSkillPtRanking",
+			"getScratchSkillPtRanking",
+			"getDaniOfPlayer",
+			"mDaniDataTpl",
+			"defVarMNameStr",
+			"getScratchSkillPtRanking",
+			"MusicClearStatus",
+			"getMusicClearStatus",
+			"pPlayerCnt",
+			"read",
+			"many T.space",
+			"formatMusicData",
+			"defMusicSrc",
+			"formatMusicData",
+			"searchMusicDefStart",
+			"defMusicSrc",
+			"formatMusicData",
+			"getMusicDatas",
+			"import Network.HTTP\ngetMusicDatas",
+			"getMusicDatas",
+			"pLevelHtmlTag",
+			"pLevel",
+			"MainDataField",
+			"getLNOBJIDs",
+			"convAllScrData",
+			"getMainDataField",
+			"MainDataField",
+			"MainDataField\n",
+			"getMainDataField",
+			"convAllScrData",
+			"convMDFiledsToBarContents",
+			"KeyLanes",
+			"convBarContentsToMDFileds",
+			"convBarContentsToMDFileds\n",
+			"partitionObjAndOtherObj",
+			"md",
+			"convAllScrData",
+			"getMainDataField",
+			"pMFDatas",
+			"convObjs",
+			"key",
+			"getLNOBJIDs",
+			"getMainDataField",
 			"ScratchSkillPtRanking",
 			"convertDatas",
 			"map",
@@ -425,6 +582,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"convBarContentsToMDFields",
 			"",
 			"Text",
 			"L"
@@ -438,75 +596,134 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "FromHPtoSSPtData.hs",
+					"file": "/C/Users/mind-s/Documents/GitHub/minddnimHP/bms_sara_ClearRanking/tableHeader.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3278,
+						"buffer_size": 2470,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2717,
-								2717
+								944,
+								944
 							]
 						],
 						"settings":
 						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"in_converting": true,
+							"origin_encoding": "CP932",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1257.0,
+						"translation.y": 566.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/mind-s/Documents/GitHub/HP_dev/bms_sara_ClearRanking.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 41877,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								41868,
+								41642
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "SHIFT_JIS",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 73300.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 1,
-					"file": "MusicDataParser.hs",
+					"buffer": 2,
+					"file": "/C/Users/mind-s/Documents/GitHub/minddnimHP/bms_sara_ClearData/tableFooter.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17856,
+						"buffer_size": 1860,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15916,
-								15916
+								1713,
+								1713
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "CP932",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 375.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/mind-s/Documents/GitHub/HP_dev/fo.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2043,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								312,
+								2043
 							]
 						],
 						"settings":
 						{
 							"origin_encoding": "UTF-8",
-							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 12455.0,
+						"translation.y": 1459.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -514,7 +731,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 31.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -529,18 +746,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.679998953097,
 			1.0
 		],
 		"rows":
@@ -552,7 +762,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 205.0
+		"height": 304.0
 	},
 	"output.find_results":
 	{
@@ -560,7 +770,7 @@
 	},
 	"output.haskell_error_checker":
 	{
-		"height": 465.0
+		"height": 464.0
 	},
 	"output.haskell_sublime_load":
 	{
@@ -569,7 +779,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 72.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":

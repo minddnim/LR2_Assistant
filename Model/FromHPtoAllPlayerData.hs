@@ -11,8 +11,15 @@ import System.Locale
 import Network.HTTP
 import MusicDataParser
 import Text.Printf
+import Control.Applicative
 
 type PageID = Int
+type Rank = T.Text
+type DaniData = (Rank, [PlayerMusicDataInfo])
+type PlayerID = T.Text
+type DaniHard = T.Text
+type DaniNormal = T.Text
+type DaniEasy = T.Text
 
 musicURLBase :: String
 musicURLBase = "http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsid="
@@ -48,21 +55,37 @@ main = do
       iRPageSrc <- openURL mAccsessURLPage
       return $ getPlayerMusicDataInfoFromIRSite iRPageSrc
     return (mData, concat mIRPlayerData)
-  let rankData = getClearRanking mIRDataTpl
+  danis <- (T.lines . T.pack) <$> readFile ("./" ++ "dani.csv")
+  let daniURLTpls = L.filter (\x -> snd x /= "") $ map divDaniAndUrl danis
+  mDaniDataTpl <- forM daniURLTpls $ \dDataTpl -> do
+    let musicIRPage = tail $ T.unpack $ snd dDataTpl
+    mHtml <- openURL musicIRPage
+    let playerCnt = getPlayerCntFromIRSite mHtml
+        accessURLPages = musicURLDerived musicIRPage [1..((playerCnt-1) `div` 100 + 1)]
+    mIRPlayerData <- forM accessURLPages $ \mAccsessURLPage -> do
+      iRPageSrc <- openURL mAccsessURLPage
+      return $ getPlayerMusicDataInfoFromIRSite iRPageSrc
+    return (fst dDataTpl, concat mIRPlayerData)
+  let rankData = take 300 $ getClearRanking mIRDataTpl
       updateTimeStr = T.pack $ "document.write(\"<font color='white'>update : " ++ ymdString ++ "_" ++ timeString ++ "</font>\")\n"
-      outputSrc = T.concat [T.pack headerContents, updateTimeStr, defVarMNameStr rankData, T.pack footerContents]
+      outputSrc = T.concat [T.pack headerContents, updateTimeStr, defVarMNameStr (length mIRDataTpl) rankData mDaniDataTpl, T.pack footerContents]
   T.writeFile　outHtmlFileName outputSrc
 
-defVarMNameStr :: [ClearRanking] -> T.Text
-defVarMNameStr datas = T.concat varMName
-  where mNames = getVarMNames datas
+divDaniAndUrl :: T.Text -> (Rank , T.Text)
+divDaniAndUrl str = (x, y)
+  where (x:y:_) = T.splitOn "," str
+
+defVarMNameStr :: Int -> [ClearRanking] -> [DaniData] -> T.Text
+defVarMNameStr  mDataCnt datas daniDatas= T.concat varMName
+  where mNames = getVarMNames  mDataCnt datas daniDatas
         varMName = ["var mname = [",T.concat mNames,"];\n"]
+        
+getVarMNames :: Int -> [ClearRanking] -> [DaniData] -> [T.Text] 
+getVarMNames mDataCnt datas daniDatas = L.intersperse "," $ zipWith (curry getVarMName') [1 ..] datas
+  where getVarMName' = getVarMName mDataCnt daniDatas
 
-getVarMNames :: [ClearRanking] -> [T.Text] 
-getVarMNames datas = L.intersperse "," $ zipWith (curry getVarMName) [1 ..] datas
-
-getVarMName :: (Int, ClearRanking) -> T.Text
-getVarMName (n, dat) = T.concat dataDef
+getVarMName :: Int -> [DaniData] -> (Int, ClearRanking) -> T.Text
+getVarMName mDataCnt daniDats (n, dat) = T.concat dataDef
   where djname = dDJNAME dat
         playid = dPLAYERID dat
         clearpt = (T.pack . show) $ dCLEARPT dat
@@ -71,5 +94,24 @@ getVarMName (n, dat) = T.concat dataDef
         ncnt = (T.pack . show) $ dNCNT dat
         ecnt = (T.pack . show) $ dECNT dat
         fcnt = (T.pack . show) $ dFCNT dat
-        dataDef = ["\n[",T.pack (show n),",\"",djname,p,playid,p,clearpt,p,fccnt,p,hcnt,p,ncnt,p,ecnt,p,fcnt,"\",\n]"]
+        noPlayCnt = (T.pack . show) $ mDataCnt - sum [dFCCNT dat, dHCNT dat, dNCNT dat, dECNT dat, dFCNT dat]
+        (dhard, dnormal) = getDaniOfPlayerStatus daniDats playid
+        hStr = "<font color='red'>" `T.append` dhard `T.append` "</font>"
+        nStr = "<font color='blue'>" `T.append` dnormal `T.append` "</font>"
+        dataDef = ["\n[",T.pack (show n),",\"",djname,p,playid,p,hStr,p,nStr,p,clearpt,p,fccnt,p,hcnt,p,ncnt,p,ecnt,p,fcnt,p,noPlayCnt,"\",\n]"]
         p = "\",\n\""
+
+getDaniOfPlayerStatus :: [DaniData] -> PlayerID -> (DaniHard, DaniNormal)
+getDaniOfPlayerStatus dData pId = getDaniOfPlayer dData pId ("-", "-")
+
+getDaniOfPlayer :: [DaniData] -> PlayerID -> (DaniHard, DaniNormal) -> (DaniHard, DaniNormal)
+getDaniOfPlayer [] _ ret = ret
+getDaniOfPlayer (x:xs) pId ret | null daniResults = getDaniOfPlayer xs pId ret
+                               | otherwise = getDaniOfPlayer xs pId (setDaniOfStatus (fst x) (head daniResults) ret)
+  where daniResults = filter (\p -> dPlayerID p == pId) (snd　x)
+
+setDaniOfStatus :: Rank -> PlayerMusicDataInfo -> (DaniHard, DaniNormal) -> (DaniHard, DaniNormal)
+setDaniOfStatus r p (h, n) | ("FULLCOMBO" `T.isInfixOf` c || "HARD" `T.isInfixOf` c) && h == "-" = (r, n)
+                              | "CLEAR" `T.isInfixOf` c && n == "-" = (h, r)
+                              | otherwise = (h, n)
+  where c = dClearStatus p

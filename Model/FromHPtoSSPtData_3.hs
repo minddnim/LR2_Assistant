@@ -31,13 +31,27 @@ musicURLDerived urlBase = map ((urlPage ++) . show)
 openURL :: String -> IO String
 openURL x = getResponseBody =<< simpleHTTP (getRequest　x)
 
+easyLv :: [String]
+easyLv = map show [3]
+
+normalLv :: [String]
+normalLv = map show [5..10]
+
+hardLv :: [String]
+hardLv = map show [11..16]
+
+outFilter :: MusicData -> Bool
+outFilter md = lv `elem` easyLv
+  where lv = concat $ drop 2 $ map T.unpack $ T.group lvStr
+        lvStr = dLevel md
+
 main :: IO()
 main = do
   contents <- readFile $ "./" ++ "tableURL.txt"
   defHtmlFileNames <- readFile $ "./" ++ "defHtmlFileName.txt"
   htmlSrc <- openURL $ head $ lines contents
   zonedTime <- getZonedTime
-  let musicDatas = getMusicDatas $ T.pack htmlSrc
+  let musicDatas = filter outFilter $ getMusicDatas $ T.pack htmlSrc
       ymdString = formatTime defaultTimeLocale "%F" zonedTime
       hmsString = T.splitOn ":" $ T.pack $ formatTime defaultTimeLocale "%T" zonedTime
       timeString = concatMap T.unpack $ intersperse "-" hmsString
@@ -89,7 +103,7 @@ getVarMName :: Int -> [DaniData] -> (Int, ScratchSkillPtRanking) -> T.Text
 getVarMName mDataCnt daniDats (n, dat) = T.concat dataDef
   where djname = dDJNAME' dat
         playid = dPLAYERID' dat
-        sspt = (T.pack . show) $ (dSKILLPT dat) `div` 10000
+        sspt = (T.pack . show) $ dSKILLPT dat `div` 10000
         aaacnt = (T.pack . show) $ dAAA dat
         aacnt = (T.pack . show) $ dAA dat
         acnt = (T.pack . show) $ dA dat
